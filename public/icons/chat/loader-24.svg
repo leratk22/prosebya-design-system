@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Loader" clip-path="url(#clip0_0_24)">
+<path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M12 1.8C6.3667 1.8 1.8 6.3667 1.8 12C1.8 17.6333 6.3667 22.2 12 22.2C17.6333 22.2 22.2 17.6333 22.2 12C22.2 11.5582 22.5582 11.2 23 11.2C23.4418 11.2 23.8 11.5582 23.8 12C23.8 18.517 18.517 23.8 12 23.8C5.48304 23.8 0.2 18.517 0.2 12C0.2 5.48304 5.48304 0.2 12 0.2C12.4418 0.2 12.8 0.558172 12.8 1C12.8 1.44183 12.4418 1.8 12 1.8Z" fill="#22263B"/>
+</g>
+<defs>
+<clipPath id="clip0_0_24">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -17,6 +17,7 @@ npm run storybook
 |---|---|
 | `src/components/ui/` | Базовые компоненты: Button, ButtonExpand, ButtonGroup, ButtonPlayPause, Badge, Checkbox, Highlight, Modal, Spinner, Avatar, Tabs, Textarea |
 | `src/components/cards/` | Карточки контента: AudioCardWeb, BannerCardWeb, BigPhotoCard, ColoredCardSingle, WormCardWeb, SkillCourseCarousel и другие |
+| `src/components/chat/` | Чат: ChatBubble (текст, файл, изображение; входящие и исходящие; статусы отправки), ChatFile |
 | `src/components/illustrations/` | Иллюстрации бренда |
 | `src/components/icons/` | Иконки |
 | `tailwind.config.ts` | Токены: примитивы и семантика |
