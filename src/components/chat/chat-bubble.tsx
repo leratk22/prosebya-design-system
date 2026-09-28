@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { ChatFile } from "./chat-file";
+import { asset } from "../../lib/asset";
 
 export type ChatBubbleType = "message" | "file" | "image";
 export type ChatBubbleWidth = "compact" | "max";
@@ -55,13 +56,13 @@ function ErrorActions({ onInfo, onDelete, onRetry }: Pick<ChatBubbleProps, "onIn
   return (
     <div className="flex shrink-0 items-center justify-end gap-8">
       <button type="button" className={actionButtonClasses} onClick={onInfo} aria-label="Подробнее об ошибке">
-        <img src="/icons/chat/info-24.svg" alt="" width={24} height={24} />
+        <img src={asset("/icons/chat/info-24.svg")} alt="" width={24} height={24} />
       </button>
       <button type="button" className={actionButtonClasses} onClick={onDelete} aria-label="Удалить сообщение">
-        <img src="/icons/chat/trash-24.svg" alt="" width={24} height={24} />
+        <img src={asset("/icons/chat/trash-24.svg")} alt="" width={24} height={24} />
       </button>
       <button type="button" className={actionButtonClasses} onClick={onRetry} aria-label="Отправить повторно">
-        <img src="/icons/chat/reload-24.svg" alt="" width={24} height={24} />
+        <img src={asset("/icons/chat/reload-24.svg")} alt="" width={24} height={24} />
       </button>
     </div>
   );
@@ -70,13 +71,13 @@ function ErrorActions({ onInfo, onDelete, onRetry }: Pick<ChatBubbleProps, "onIn
 /** Время и статус доставки под текстом или файлом. */
 function Meta({ time, outgoing, status }: Pick<ChatBubbleProps, "time" | "outgoing" | "status">) {
   if (outgoing && status === "sending") {
-    return <img src="/icons/chat/clock-16.svg" alt="Отправляется" width={16} height={16} className="opacity-60" />;
+    return <img src={asset("/icons/chat/clock-16.svg")} alt="Отправляется" width={16} height={16} className="opacity-60" />;
   }
   return (
     <div className="flex items-center gap-4 rounded-[4px]">
       <span className="font-euclid text-body-s-regular text-light-fg-tertiary text-right whitespace-nowrap">{time}</span>
       {outgoing && status === "sent" && (
-        <img src="/icons/chat/read-16.svg" alt="Доставлено" width={16} height={16} className="opacity-60" />
+        <img src={asset("/icons/chat/read-16.svg")} alt="Доставлено" width={16} height={16} className="opacity-60" />
       )}
     </div>
   );
@@ -154,7 +155,7 @@ export const ChatBubble = React.forwardRef<HTMLDivElement, ChatBubbleProps>(
           )}
           {status === "loading" && (
             <img
-              src="/icons/chat/loader-24.svg"
+              src={asset("/icons/chat/loader-24.svg")}
               alt="Изображение загружается"
               width={24}
               height={24}
@@ -173,13 +174,13 @@ export const ChatBubble = React.forwardRef<HTMLDivElement, ChatBubbleProps>(
                 "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-light-border-accent",
               ].join(" ")}
             >
-              <img src="/icons/chat/reload-24-negative.svg" alt="" width={24} height={24} />
+              <img src={asset("/icons/chat/reload-24-negative.svg")} alt="" width={24} height={24} />
             </button>
           )}
           {showTime && (
             <div className="absolute bottom-6 right-6 flex items-center gap-4 rounded-m bg-light-fg-muted px-4 py-1">
               {outgoing && status === "sending" ? (
-                <img src="/icons/chat/clock-16-inverted.svg" alt="Отправляется" width={16} height={16} />
+                <img src={asset("/icons/chat/clock-16-inverted.svg")} alt="Отправляется" width={16} height={16} />
               ) : (
                 <span className="w-32 text-center font-euclid text-body-s-regular text-light-fg-inverted-secondary">{time}</span>
               )}

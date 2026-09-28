@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { Badge } from "@/components/ui/badge";
+import { asset } from "../../lib/asset";
 
 export interface BigPhotoCardProps
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -214,7 +215,7 @@ export const BigPhotoCard = React.forwardRef<
               />
             ) : (
               <img
-                src="/practice-image-placeholder.svg"
+                src={asset("/practice-image-placeholder.svg")}
                 alt={imageAlt || "Big photo card placeholder"}
                 style={{
                   width: "100%",

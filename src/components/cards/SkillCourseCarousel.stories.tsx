@@ -3,6 +3,7 @@ import {
   SkillCourseCarousel,
   type SkillCourseCarouselProps,
 } from "./skill-course-carousel";
+import { asset } from "../../lib/asset";
 
 const meta: Meta<typeof SkillCourseCarousel> = {
   title: "Cards/SkillCourseCarousel",
@@ -47,19 +48,19 @@ const meta: Meta<typeof SkillCourseCarousel> = {
         title: "Как влиять на самооценку",
         subtitle: "8 практик",
         state: "default",
-        imageUrl: "/images/carousel/practice-card-2x.png",
+        imageUrl: asset("/images/carousel/practice-card-2x.png"),
       },
       {
         title: "Как принимать вызовы",
         subtitle: "Далее: упражнение 23",
         state: "in-progress",
-        imageUrl: "/images/carousel/practice-card-2x.png",
+        imageUrl: asset("/images/carousel/practice-card-2x.png"),
       },
       {
         title: "Как радоваться жизни каждый день",
         subtitle: "Далее: упражнение 23",
         state: "in-progress",
-        imageUrl: "/images/carousel/practice-card-2x.png",
+        imageUrl: asset("/images/carousel/practice-card-2x.png"),
       },
     ],
   },
@@ -99,25 +100,25 @@ const defaultItems: SkillCourseCarouselProps["items"] = [
     title: "Как влиять на самооценку",
     subtitle: "8 практик",
     state: "default",
-    imageUrl: "/images/carousel/practice-card-2x.png",
+    imageUrl: asset("/images/carousel/practice-card-2x.png"),
   },
   {
     title: "Как влиять на самоценностное ощущение",
     subtitle: "Далее: упражнение 23",
     state: "in-progress",
-    imageUrl: "/images/carousel/practice-card-2x.png",
+    imageUrl: asset("/images/carousel/practice-card-2x.png"),
   },
   {
     title: "Как радоваться жизни каждый день",
     subtitle: "Далее: упражнение 23",
     state: "in-progress",
-    imageUrl: "/images/carousel/practice-card-2x.png",
+    imageUrl: asset("/images/carousel/practice-card-2x.png"),
   },
   {
     title: "Как определять свои границы",
     subtitle: "Далее: упражнение 23",
     state: "in-progress",
-    imageUrl: "/images/carousel/practice-card-2x.png",
+    imageUrl: asset("/images/carousel/practice-card-2x.png"),
   },
 ];
 
@@ -126,19 +127,19 @@ const defaultOnlyItems: SkillCourseCarouselProps["items"] = [
     title: "Как влиять на самооценку",
     subtitle: "8 практик",
     state: "default",
-    imageUrl: "/images/carousel/practice-card-2x.png",
+    imageUrl: asset("/images/carousel/practice-card-2x.png"),
   },
   {
     title: "Как принимать вызовы",
     subtitle: "12 практик",
     state: "default",
-    imageUrl: "/images/carousel/practice-card-2x.png",
+    imageUrl: asset("/images/carousel/practice-card-2x.png"),
   },
   {
     title: "Как радоваться жизни каждый день",
     subtitle: "5 практик",
     state: "default",
-    imageUrl: "/images/carousel/practice-card-2x.png",
+    imageUrl: asset("/images/carousel/practice-card-2x.png"),
   },
 ];
 
@@ -147,19 +148,19 @@ const inProgressItems: SkillCourseCarouselProps["items"] = [
     title: "Как влиять на самооценку",
     subtitle: "Далее: упражнение 5",
     state: "in-progress",
-    imageUrl: "/images/carousel/practice-card-2x.png",
+    imageUrl: asset("/images/carousel/practice-card-2x.png"),
   },
   {
     title: "Как принимать вызовы",
     subtitle: "Далее: упражнение 23",
     state: "in-progress",
-    imageUrl: "/images/carousel/practice-card-2x.png",
+    imageUrl: asset("/images/carousel/practice-card-2x.png"),
   },
   {
     title: "Как радоваться жизни каждый день",
     subtitle: "Далее: упражнение 12",
     state: "in-progress",
-    imageUrl: "/images/carousel/practice-card-2x.png",
+    imageUrl: asset("/images/carousel/practice-card-2x.png"),
   },
 ];
 
@@ -258,20 +259,20 @@ export const LongTitles: Story = {
           "Очень длинный заголовок практики, который должен обрезаться после трёх строк и показывать многоточие, если текст не умещается в отведённое пространство",
         subtitle: "8 практик",
         state: "default" as const,
-        imageUrl: "/images/carousel/practice-card-2x.png",
+        imageUrl: asset("/images/carousel/practice-card-2x.png"),
       },
       {
         title:
           "Ещё один длинный заголовок для проверки обрезки текста на трёх строках карточки навыка в десктопной и мобильной версии",
         subtitle: "Далее: упражнение 23",
         state: "in-progress" as const,
-        imageUrl: "/images/carousel/practice-card-2x.png",
+        imageUrl: asset("/images/carousel/practice-card-2x.png"),
       },
       {
         title: "Короткий",
         subtitle: "3 практики",
         state: "default" as const,
-        imageUrl: "/images/carousel/practice-card-2x.png",
+        imageUrl: asset("/images/carousel/practice-card-2x.png"),
       },
     ],
   },
@@ -291,15 +292,15 @@ export const WithoutSubtitles: Story = {
     items: [
       {
         title: "Как влиять на самооценку",
-        imageUrl: "/images/carousel/practice-card-2x.png",
+        imageUrl: asset("/images/carousel/practice-card-2x.png"),
       },
       {
         title: "Как принимать вызовы",
-        imageUrl: "/images/carousel/practice-card-2x.png",
+        imageUrl: asset("/images/carousel/practice-card-2x.png"),
       },
       {
         title: "Как радоваться жизни каждый день",
-        imageUrl: "/images/carousel/practice-card-2x.png",
+        imageUrl: asset("/images/carousel/practice-card-2x.png"),
       },
     ],
   },

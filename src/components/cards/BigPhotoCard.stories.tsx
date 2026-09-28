@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { BigPhotoCard, type BigPhotoCardProps } from "./big-photo-card";
 import { Spinner } from "@/components/ui/spinner";
+import { asset } from "../../lib/asset";
 
 const meta: Meta<typeof BigPhotoCard> = {
   title: "Cards/BigPhotoCard",
@@ -82,7 +83,7 @@ export const Default: Story = {
     title: "Заголовок максимум в 3 строки, далее обрезка в многоточие, если текст не уместился",
     label: "Описание в 1 строку в зависимости от типа контента (необязательно)",
     duration: "05:23",
-    imageUrl: "/practice-images/practice-image-3x.png",
+    imageUrl: asset("/practice-images/practice-image-3x.png"),
     imageAlt: "Практика медитации",
   },
 };
@@ -92,7 +93,7 @@ export const WithImage: Story = {
     subtitle: "Практика",
     title: "Медитация для сна",
     label: "Помочь себе за 2 минуты",
-    imageUrl: "/practice-images/practice-image-3x.png",
+    imageUrl: asset("/practice-images/practice-image-3x.png"),
     imageAlt: "Медитация",
     duration: "10:45",
   },
@@ -104,7 +105,7 @@ export const Clickable: Story = {
     title: "Заголовок максимум в 3 строки, далее обрезка в многоточие, если текст не уместился",
     label: "Описание в 1 строку в зависимости от типа контента (необязательно)",
     duration: "05:23",
-    imageUrl: "/practice-images/practice-image-3x.png",
+    imageUrl: asset("/practice-images/practice-image-3x.png"),
     imageAlt: "Релаксация",
     onClick: () => {
       alert("Карточка кликнута!");
@@ -118,7 +119,7 @@ export const WithoutLabel: Story = {
     title: "Короткий заголовок",
     label: undefined,
     duration: "03:15",
-    imageUrl: "/practice-images/practice-image-3x.png",
+    imageUrl: asset("/practice-images/practice-image-3x.png"),
     imageAlt: "Глубокий релакс",
   },
 };
@@ -129,7 +130,7 @@ export const WithoutDuration: Story = {
     title: "Короткий заголовок",
     label: "Описание в 1 строку в зависимости от типа контента (необязательно)",
     duration: undefined,
-    imageUrl: "/practice-images/practice-image-3x.png",
+    imageUrl: asset("/practice-images/practice-image-3x.png"),
     imageAlt: "Короткая практика",
   },
 };
@@ -140,7 +141,7 @@ export const WithoutLabelAndDuration: Story = {
     title: "Короткий заголовок",
     label: undefined,
     duration: undefined,
-    imageUrl: "/practice-images/practice-image-3x.png",
+    imageUrl: asset("/practice-images/practice-image-3x.png"),
     imageAlt: "Короткая практика без меток",
   },
 };
@@ -151,7 +152,7 @@ export const WithoutSubtitle: Story = {
     title: "Короткий заголовок без подзаголовка",
     label: "Описание в 1 строку в зависимости от типа контента (необязательно)",
     duration: "05:23",
-    imageUrl: "/practice-images/practice-image-3x.png",
+    imageUrl: asset("/practice-images/practice-image-3x.png"),
     imageAlt: "Практика без подзаголовка",
   },
 };
@@ -162,7 +163,7 @@ export const LongTitle: Story = {
     title: "Очень длинный заголовок который должен обрезаться после трех строк и показывать многоточие если текст не умещается в отведенное пространство карточки",
     label: "Описание",
     duration: "12:34",
-    imageUrl: "/practice-images/practice-image-3x.png",
+    imageUrl: asset("/practice-images/practice-image-3x.png"),
     imageAlt: "Самостоятельная забота",
   },
 };
@@ -195,7 +196,7 @@ export const ThemesComparison: Story = {
             title="Заголовок максимум в 3 строки, далее обрезка в многоточие, если текст не уместился"
             label="Описание в 1 строку в зависимости от типа контента (необязательно)"
             duration="05:23"
-            imageUrl="/practice-images/practice-image-3x.png"
+            imageUrl={asset("/practice-images/practice-image-3x.png")}
             imageAlt="Медитация"
           />
         </div>
@@ -208,7 +209,7 @@ export const ThemesComparison: Story = {
             title="Заголовок максимум в 3 строки, далее обрезка в многоточие, если текст не уместился"
             label="Описание в 1 строку в зависимости от типа контента (необязательно)"
             duration="05:23"
-            imageUrl="/practice-images/practice-image-3x.png"
+            imageUrl={asset("/practice-images/practice-image-3x.png")}
             imageAlt="Медитация"
           />
         </div>

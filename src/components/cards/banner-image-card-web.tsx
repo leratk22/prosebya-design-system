@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { asset } from "../../lib/asset";
 
 export interface BannerImageCardWebProps
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -54,7 +55,7 @@ export const BannerImageCardWeb = React.forwardRef<
     
     const [desktopImageError, setDesktopImageError] = React.useState(false);
     const [mobileImageError, setMobileImageError] = React.useState(false);
-    const placeholderSrc = "/placeholder_banner_image.svg";
+    const placeholderSrc = asset("/placeholder_banner_image.svg");
 
     // Определяем, какие изображения использовать
     const finalDesktopSrc = desktopImageError ? placeholderSrc : imageSrc;

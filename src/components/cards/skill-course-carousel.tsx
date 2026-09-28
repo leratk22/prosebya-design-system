@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { Icon } from "@/components/icons";
+import { asset } from "../../lib/asset";
 
 /* ─────────────────────── Types ─────────────────────── */
 
@@ -36,7 +37,7 @@ export interface SkillCourseCarouselProps
 
 /* ─────────────── Card Image (internal) ─────────────── */
 
-const DEFAULT_CARD_IMAGE = "/images/carousel/practice-card-2x.png";
+const DEFAULT_CARD_IMAGE = asset("/images/carousel/practice-card-2x.png");
 
 function CardImage({
   imageUrl,
@@ -56,7 +57,7 @@ function CardImage({
     return (
       <div className="shrink-0 w-[160px] h-[160px] flex items-center justify-center">
         <img
-          src="/horizontal-placeholder.svg"
+          src={asset("/horizontal-placeholder.svg")}
           alt={imageAlt || "Card placeholder"}
           className="w-full h-full"
         />

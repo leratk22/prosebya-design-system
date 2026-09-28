@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { ChatBubble } from "./chat-bubble";
+import { asset } from "../../lib/asset";
 
-const PHOTO = "/images/chat/photo-example.jpg";
+const PHOTO = asset("/images/chat/photo-example.jpg");
 
 /**
  * Сообщение в чате. Поддерживает короткий и длинный текст, файлы и изображения,

@@ -2,16 +2,17 @@
 
 import * as React from "react";
 import { Badge } from "@/components/ui/badge";
+import { asset } from "../../lib/asset";
 
 // Пути к фоновым изображениям для разных тем и разрешений
 const BACKGROUND_IMAGE_PATHS = {
   light: {
-    "1x": "/images/longread-card-old/light-1x.png",
-    "2x": "/images/longread-card-old/light-2x.png",
+    "1x": asset("/images/longread-card-old/light-1x.png"),
+    "2x": asset("/images/longread-card-old/light-2x.png"),
   },
   dark: {
-    "1x": "/images/longread-card-old/dark-1x.png",
-    "2x": "/images/longread-card-old/dark-2x.png",
+    "1x": asset("/images/longread-card-old/dark-1x.png"),
+    "2x": asset("/images/longread-card-old/dark-2x.png"),
   },
 };
 

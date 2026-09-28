@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { HorizontalCardWeb, type HorizontalCardWebProps } from "./horizontal-card-web";
 import { Spinner } from "@/components/ui/spinner";
 import { Badge } from "@/components/ui/badge";
+import { asset } from "../../lib/asset";
 
 const meta: Meta<typeof HorizontalCardWeb> = {
   title: "Cards/HorizontalCardWeb",
@@ -80,7 +81,7 @@ export const Default: Story = {
     title: "Заголовок максимум в 2 строки, далее обрезка в многоточие, если текст не уместился",
     description: "30 вопросов",
     badges: ["первый тег", "второй тег"],
-    imageUrl: "/horizontal-card-3x.png",
+    imageUrl: asset("/horizontal-card-3x.png"),
     imageAlt: "Карточка",
   },
 };
@@ -90,7 +91,7 @@ export const WithImage: Story = {
     title: "Медитация для сна",
     description: "30 вопросов",
     badges: ["первый тег", "второй тег"],
-    imageUrl: "/horizontal-card-3x.png",
+    imageUrl: asset("/horizontal-card-3x.png"),
     imageAlt: "Медитация",
   },
 };
@@ -162,7 +163,7 @@ export const LongBadges: Story = {
       "Очень длинный тэг который не должен помещаться в контейнер и должен плавно исчезать",
       "Еще один длинный тэг для демонстрации градиента"
     ],
-    imageUrl: "/horizontal-card-3x.png",
+    imageUrl: asset("/horizontal-card-3x.png"),
     imageAlt: "Карточка",
   },
   parameters: {
@@ -184,7 +185,7 @@ export const ThemesComparison: Story = {
             title="Заголовок максимум в 2 строки, далее обрезка в многоточие, если текст не уместился"
             description="30 вопросов"
             badges={["первый тег", "второй тег"]}
-            imageUrl="/horizontal-card-3x.png"
+            imageUrl={asset("/horizontal-card-3x.png")}
             imageAlt="Карточка"
           />
         </div>
@@ -196,7 +197,7 @@ export const ThemesComparison: Story = {
             title="Заголовок максимум в 2 строки, далее обрезка в многоточие, если текст не уместился"
             description="30 вопросов"
             badges={["первый тег", "второй тег"]}
-            imageUrl="/horizontal-card-3x.png"
+            imageUrl={asset("/horizontal-card-3x.png")}
             imageAlt="Карточка"
           />
         </div>

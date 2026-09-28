@@ -3,6 +3,7 @@
 import * as React from "react";
 import { Badge } from "@/components/ui/badge";
 import { ButtonPlayPause } from "@/components/ui/button-play-pause";
+import { asset } from "../../lib/asset";
 
 export interface AudioCardWebProps
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -139,7 +140,7 @@ export const AudioCardWeb = React.forwardRef<
             <div className="w-full flex items-center gap-8">
               <div className="flex-1 overflow-hidden flex items-center gap-2">
                 <img
-                  src="/icons/waveform.svg"
+                  src={asset("/icons/waveform.svg")}
                   alt="Waveform"
                   className="h-24 object-contain object-left"
                   style={{ minWidth: "569px", width: "100%" }} // Фиксированная минимальная ширина SVG, обрезается контейнером

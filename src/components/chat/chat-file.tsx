@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { asset } from "../../lib/asset";
 
 export type ChatFileState = "uploaded" | "loading" | "reload";
 export type ChatFileTone = "brand" | "neutral";
@@ -48,11 +49,11 @@ export const ChatFile = React.forwardRef<HTMLDivElement, ChatFileProps>(
 
     const icon =
       state === "loading" ? (
-        <img src="/icons/chat/loader-24.svg" alt="" width={24} height={24} className="animate-spin" />
+        <img src={asset("/icons/chat/loader-24.svg")} alt="" width={24} height={24} className="animate-spin" />
       ) : state === "reload" ? (
-        <img src="/icons/chat/reload-24-negative.svg" alt="" width={24} height={24} />
+        <img src={asset("/icons/chat/reload-24-negative.svg")} alt="" width={24} height={24} />
       ) : (
-        <img src="/icons/chat/download-24.svg" alt="" width={24} height={24} />
+        <img src={asset("/icons/chat/download-24.svg")} alt="" width={24} height={24} />
       );
 
     const iconLabel =

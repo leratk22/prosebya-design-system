@@ -1,6 +1,7 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { ChatBubble, type ChatBubbleProps } from "./chat-bubble";
+import { asset } from "../../lib/asset";
 
 type Item = ChatBubbleProps & { uid: number };
 
@@ -15,7 +16,7 @@ const initial: Item[] = [
     time: "19:05",
   },
   { uid: 4, type: "file", fileName: "Дневник эмоций.pdf", fileSize: "240 Кбайт", time: "19:05" },
-  { uid: 5, type: "image", outgoing: true, status: "reload", imageSrc: "/images/chat/photo-example.jpg", time: "19:07" },
+  { uid: 5, type: "image", outgoing: true, status: "reload", imageSrc: asset("/images/chat/photo-example.jpg"), time: "19:07" },
   { uid: 6, type: "message", outgoing: true, status: "error", message: "Спасибо, попробую сегодня", time: "19:08" },
 ];
 

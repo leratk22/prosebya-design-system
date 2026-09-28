@@ -4,6 +4,7 @@ import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { ButtonPlayPause } from "@/components/ui/button-play-pause";
 import { Badge } from "@/components/ui/badge";
+import { asset } from "../../lib/asset";
 
 export type SkillCourseCardState = "default" | "in-progress";
 
@@ -234,7 +235,7 @@ export const SkillCourseCardWeb = React.forwardRef<
               />
             ) : (
               <img
-                src="/skill-course-not_started_placeholder.svg"
+                src={asset("/skill-course-not_started_placeholder.svg")}
                 alt={videoImageAlt || "Video preview placeholder"}
                 className="absolute inset-0 size-full min-w-full min-h-full object-cover object-center block"
                 style={{ aspectRatio: '343 / 193' }}
@@ -264,7 +265,7 @@ export const SkillCourseCardWeb = React.forwardRef<
               />
             ) : (
               <img
-                src="/skill-course-not_started_placeholder.svg"
+                src={asset("/skill-course-not_started_placeholder.svg")}
                 alt={videoImageAlt || "Video preview placeholder"}
                 className="absolute inset-0 size-full min-w-full min-h-full object-cover object-center block"
                 style={{ aspectRatio: '343 / 193' }}
@@ -398,7 +399,7 @@ export const SkillCourseCardWeb = React.forwardRef<
                   style={{ borderRadius: 12 }}
                 >
                   <img
-                    src="/skill-course-started_placeholder.svg"
+                    src={asset("/skill-course-started_placeholder.svg")}
                     alt={nextExerciseImageAlt || "Exercise cover placeholder"}
                     className="block w-full h-full object-cover"
                   />
@@ -462,7 +463,7 @@ export const SkillCourseCardWeb = React.forwardRef<
                     style={{ borderRadius: 8 }}
                   >
                     <img
-                      src="/skill-course-started_placeholder.svg"
+                      src={asset("/skill-course-started_placeholder.svg")}
                       alt={nextExerciseImageAlt || "Exercise cover placeholder"}
                       className="block w-full h-full object-cover"
                     />

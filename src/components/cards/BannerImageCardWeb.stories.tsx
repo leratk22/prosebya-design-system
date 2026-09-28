@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { BannerImageCardWeb, type BannerImageCardWebProps } from "./banner-image-card-web";
+import { asset } from "../../lib/asset";
 
 const meta: Meta<typeof BannerImageCardWeb> = {
   title: "Cards/BannerImageCardWeb",
@@ -36,8 +37,8 @@ const meta: Meta<typeof BannerImageCardWeb> = {
     },
   },
   args: {
-    imageSrc: "/images/banner/banner-desktop.png",
-    imageSrcMobile: "/images/banner/banner-mobile.png",
+    imageSrc: asset("/images/banner/banner-desktop.png"),
+    imageSrcMobile: asset("/images/banner/banner-mobile.png"),
     imageAlt: "Пример баннера",
   },
   argTypes: {
@@ -66,16 +67,16 @@ type Story = StoryObj<typeof BannerImageCardWeb>;
 
 export const Default: Story = {
   args: {
-    imageSrc: "/images/banner/banner-desktop.png",
-    imageSrcMobile: "/images/banner/banner-mobile.png",
+    imageSrc: asset("/images/banner/banner-desktop.png"),
+    imageSrcMobile: asset("/images/banner/banner-mobile.png"),
     imageAlt: "Пример баннера",
   },
 };
 
 export const WithDifferentImages: Story = {
   args: {
-    imageSrc: "/images/banner/banner-desktop.png",
-    imageSrcMobile: "/images/banner/banner-mobile.png",
+    imageSrc: asset("/images/banner/banner-desktop.png"),
+    imageSrcMobile: asset("/images/banner/banner-mobile.png"),
     imageAlt: "Пример баннера с разными изображениями",
   },
   parameters: {
@@ -90,16 +91,16 @@ export const WithDifferentImages: Story = {
 
 export const WithPlaceholder: Story = {
   args: {
-    imageSrc: "/placeholder_banner_image.svg",
-    imageSrcMobile: "/placeholder_banner_image.svg",
+    imageSrc: asset("/placeholder_banner_image.svg"),
+    imageSrcMobile: asset("/placeholder_banner_image.svg"),
     imageAlt: "Заглушка баннера",
   },
 };
 
 export const Clickable: Story = {
   args: {
-    imageSrc: "/images/banner/banner-desktop.png",
-    imageSrcMobile: "/images/banner/banner-mobile.png",
+    imageSrc: asset("/images/banner/banner-desktop.png"),
+    imageSrcMobile: asset("/images/banner/banner-mobile.png"),
     imageAlt: "Пример баннера",
     onClick: () => {
       alert("Баннер кликнут!");

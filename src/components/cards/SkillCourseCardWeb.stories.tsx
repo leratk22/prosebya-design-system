@@ -3,6 +3,7 @@ import {
   SkillCourseCardWeb,
   type SkillCourseCardWebProps,
 } from "./skill-course-card-web";
+import { asset } from "../../lib/asset";
 
 const meta: Meta<typeof SkillCourseCardWeb> = {
   title: "Cards/SkillCourseCardWeb",
@@ -48,7 +49,7 @@ const meta: Meta<typeof SkillCourseCardWeb> = {
     nextExerciseSubtitle: "Следующее упражнение",
     nextExerciseTitle:
       "Название упражнения, максимум три строки на десктопе, если длиннее, то обрезаем в многоточие, но таких названий вроде и нет",
-    nextExerciseImageUrl: "/card-skill-cover.png",
+    nextExerciseImageUrl: asset("/card-skill-cover.png"),
     nextExerciseImageAlt: "Обложка упражнения",
     nextExerciseButtonText: "Название кнопки",
   },
@@ -127,7 +128,7 @@ export const Default: Story = {
     title:
       "Заголовок на три строки, а затем обрезаем его в многоточие, если не умещается",
     state: "default",
-    videoImageUrl: "/skill-course-video-image.png.png", // Изображение из Figma node 10561:34367
+    videoImageUrl: asset("/skill-course-video-image.png.png"), // Изображение из Figma node 10561:34367
     videoImageAlt: "Video preview",
     buttonText: "Название кнопки",
     videoTag: "Тэг",
@@ -177,7 +178,7 @@ export const InProgress: Story = {
     nextExerciseSubtitle: "Следующее упражнение",
     nextExerciseTitle:
       "Название упражнения, максимум три строки на десктопе, если длиннее, то обрезаем в многоточие, но таких названий вроде и нет",
-    nextExerciseImageUrl: "/card-skill-cover.png",
+    nextExerciseImageUrl: asset("/card-skill-cover.png"),
     nextExerciseImageAlt: "Обложка упражнения",
     nextExerciseButtonText: "Название кнопки",
     nextExerciseButtonOnClick: () => {
@@ -192,7 +193,7 @@ export const Clickable: Story = {
     title:
       "Заголовок на три строки, а затем обрезаем его в многоточие, если не умещается",
     state: "default",
-    videoImageUrl: "/skill-course-video-image.png.png",
+    videoImageUrl: asset("/skill-course-video-image.png.png"),
     videoImageAlt: "Video preview",
     buttonText: "Название кнопки",
     onClick: () => {
@@ -210,7 +211,7 @@ export const LongTitle: Story = {
     title:
       "Очень длинный заголовок который должен обрезаться после трех строк на десктопе и после двух строк на мобильном устройстве если текст не умещается в отведенное пространство карточки курса навыков и продолжается дальше",
     state: "default",
-    videoImageUrl: "/skill-course-video-image.png.png",
+    videoImageUrl: asset("/skill-course-video-image.png.png"),
     videoImageAlt: "Video preview",
     buttonText: "Название кнопки",
   },

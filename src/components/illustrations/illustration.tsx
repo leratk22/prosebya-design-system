@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { illustrationFilenames } from "./illustration-filenames";
+import { asset } from "../../lib/asset";
 
 /**
  * Типы иллюстраций согласно Figma компоненту _illustration
@@ -109,8 +110,8 @@ export const Illustration: React.FC<IllustrationProps> = ({
   
   // Используем srcSet для автоматического выбора между 1x и 2x
   // Браузер автоматически выберет подходящее разрешение в зависимости от device pixel ratio
-  const src1x = `/illustrations/1x/${imageName}`;
-  const src2x = `/illustrations/2x/${imageName}`;
+  const src1x = asset(`/illustrations/1x/${imageName}`);
+  const src2x = asset(`/illustrations/2x/${imageName}`);
 
   // Изображения с большим количеством прозрачных областей требуют увеличенного масштаба
   const needsScaleUp = type === "stones" || type === "hugs-himself";

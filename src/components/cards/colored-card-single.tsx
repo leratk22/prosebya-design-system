@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { Badge } from "@/components/ui/badge";
+import { asset } from "../../lib/asset";
 
 export type LongreadCardBackgroundColor = 
   | "yellow"   // #FFE699
@@ -53,15 +54,15 @@ const BACKGROUND_COLORS: Record<LongreadCardBackgroundColor, string> = {
 
 // Пути к изображениям для каждого цвета фона (только 3x)
 const IMAGE_PATHS: Record<LongreadCardBackgroundColor, string> = {
-  yellow: "/images/longread/longread-yellow-3x.png",
-  orange: "/images/longread/longread-orange-3x.png",
-  red: "/images/longread/longread-red-3x.png",
-  blue: "/images/longread/longread-blue-3x.png",
-  gray: "/images/longread/longread-gray-3x.png",
+  yellow: asset("/images/longread/longread-yellow-3x.png"),
+  orange: asset("/images/longread/longread-orange-3x.png"),
+  red: asset("/images/longread/longread-red-3x.png"),
+  blue: asset("/images/longread/longread-blue-3x.png"),
+  gray: asset("/images/longread/longread-gray-3x.png"),
 };
 
 // Путь к SVG заглушке по умолчанию
-const DEFAULT_PLACEHOLDER_SVG = "/icons/longread-placeholder.svg";
+const DEFAULT_PLACEHOLDER_SVG = asset("/icons/longread-placeholder.svg");
 
 /**
  * Компонент ColoredCardSingle

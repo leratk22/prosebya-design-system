@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { Badge } from "@/components/ui/badge";
+import { asset } from "../../lib/asset";
 
 export interface HorizontalCardWebProps
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -107,7 +108,7 @@ export const HorizontalCardWeb = React.forwardRef<
               />
             ) : (
               <img
-                src="/horizontal-placeholder.svg"
+                src={asset("/horizontal-placeholder.svg")}
                 alt={imageAlt || "Card placeholder"}
                 className="w-full h-full"
               />

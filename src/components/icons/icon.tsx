@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import iconsData from "@/data/icons.json";
+import { asset } from "../../lib/asset";
 
 type IconSize = 16 | 20 | 24 | 32 | 40;
 
@@ -61,7 +62,7 @@ export const Icon = React.forwardRef<SVGSVGElement, IconProps>(
       }
       return null;
     }
-    const iconPath = `/icons/${fileName}`;
+    const iconPath = asset(`/icons/${fileName}`);
 
     // Загружаем SVG содержимое только на клиенте
     const [svgContent, setSvgContent] = React.useState<string | null>(null);
