@@ -52,3 +52,6 @@ Thumbs.db
 
 # local agent config
 .claude
+
+# storybook
+/storybook-static
