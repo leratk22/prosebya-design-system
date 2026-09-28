@@ -1,5 +1,5 @@
 import * as React from "react";
-import { textStyles, type TextStyleToken, type TypeMode } from "../tokens/typography";
+import { lineHeightVar, sizeVar, textStyles, type TextStyleToken, type TypeMode } from "../tokens/typography";
 import { gapTokens, spacingRules, spacingScale } from "../tokens/spacing";
 import {
   breakpoints,
@@ -41,9 +41,22 @@ function Section({
   );
 }
 
+/**
+ * Оформление страниц Foundation всегда в размерах для 375, на любой ширине холста:
+ * классы text-* внутри берут значения из этих переменных.
+ */
+const pinnedTypeVars = Object.fromEntries(
+  textStyles.flatMap((style) => [
+    [sizeVar(style.name), `${style.metrics["375"].size}px`],
+    [lineHeightVar(style.name), `${style.metrics["375"].lineHeight}px`],
+  ]),
+) as React.CSSProperties;
+
 function Page({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-col gap-40 p-24 font-euclid text-light-fg-primary">{children}</div>
+    <div className="flex flex-col gap-40 p-24 font-euclid text-light-fg-primary" style={pinnedTypeVars}>
+      {children}
+    </div>
   );
 }
 
@@ -125,6 +138,7 @@ export function SemanticColors({ theme }: { theme: Theme }) {
     <div
       className="flex flex-col gap-40 p-24 font-euclid"
       style={{
+        ...pinnedTypeVars,
         background: semanticValue(theme, "bg-primary"),
         color: semanticValue(theme, "fg-primary"),
       }}
@@ -192,7 +206,7 @@ export function TextStyles({ sample, mode }: { sample: string; mode: TypeMode })
                   style={{ gridTemplateColumns: "minmax(200px, 240px) minmax(0, 1fr)" }}
                 >
                   <div className="flex flex-col gap-4">
-                    <span className="text-label-m">{`text-${style.name}`}</span>
+                    <span className="text-label-m font-medium">{`text-${style.name}`}</span>
                     <span className="text-body-s-regular text-light-fg-tertiary">{style.figma}</span>
                     <span className="text-body-s-regular text-light-fg-tertiary">{styleTraits(style)}</span>
                     <span className="text-body-s-regular text-light-fg-tertiary">
@@ -234,7 +248,7 @@ export function FontWeights({ sample }: { sample: string }) {
           {fontWeights.flatMap(([name, value]) =>
             [false, true].map((italic) => (
               <div key={name + italic} className="grid items-baseline gap-16" style={{ gridTemplateColumns: "200px minmax(0, 1fr)" }}>
-                <span className="text-label-m">
+                <span className="text-label-m font-medium">
                   {`font-${name}${italic ? " italic" : ""}`} <span className="text-body-s-regular text-light-fg-tertiary">{value}</span>
                 </span>
                 <span className="text-title-m" style={{ fontWeight: Number(value), fontStyle: italic ? "italic" : "normal" }}>
@@ -260,7 +274,7 @@ function TokenList({
     <div className="flex flex-col">
       {entries.map(([name, value]) => (
         <div key={name} className="flex justify-between gap-16 border-b border-light-border-secondary py-8">
-          <span className="text-label-m">{format(name)}</span>
+          <span className="text-label-m font-medium">{format(name)}</span>
           <Code>{value}</Code>
         </div>
       ))}
@@ -287,7 +301,7 @@ export function Spacing() {
               style={{ gridTemplateColumns: "96px 136px minmax(0, 1fr)" }}
             >
               <div className="flex flex-col">
-                <span className="text-label-m">{`${step.value} px`}</span>
+                <span className="text-label-m font-medium">{`${step.value} px`}</span>
                 <span className="text-body-s-regular text-light-fg-tertiary">{step.name}</span>
               </div>
               <div className="h-16 rounded-checkbox bg-brand-orange" style={{ width: step.value }} />
@@ -310,7 +324,7 @@ export function Spacing() {
         <div className="grid gap-x-24" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))" }}>
           {gapTokens.map((gap) => (
             <div key={gap.name} className="flex justify-between gap-16 border-b border-light-border-secondary py-8">
-              <span className="text-label-m">{gap.name}</span>
+              <span className="text-label-m font-medium">{gap.name}</span>
               <Code>{`${gap["320"]} → ${gap["375"]}`}</Code>
             </div>
           ))}
