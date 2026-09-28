@@ -126,7 +126,7 @@ export const AllVariants: Story = {
     return (
       <div className="flex flex-col gap-24">
         <div className="flex flex-col gap-12">
-          <h3 className="text-title-m font-semibold">Box Type</h3>
+          <h3 className="text-title-s">Box Type</h3>
           <div className="flex items-center gap-16">
             <Checkbox
               type="box"
@@ -140,7 +140,7 @@ export const AllVariants: Story = {
         </div>
         
         <div className="flex flex-col gap-12">
-          <h3 className="text-title-m font-semibold">Round Type</h3>
+          <h3 className="text-title-s">Round Type</h3>
           <div className="flex items-center gap-16">
             <Checkbox
               type="round"
@@ -154,7 +154,7 @@ export const AllVariants: Story = {
         </div>
         
         <div className="flex flex-col gap-12">
-          <h3 className="text-title-m font-semibold">Все состояния</h3>
+          <h3 className="text-title-s">Все состояния</h3>
           <div className="flex flex-col gap-16">
             <div className="flex items-center gap-16">
               <Checkbox type="box" checked={false} />

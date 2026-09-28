@@ -186,7 +186,7 @@ export function Modal({
           {title ? (
             <h2
               id={titleId}
-              className="text-title-l font-semibold font-euclid text-light-fg-primary dark:text-dark-fg-primary"
+              className="text-title-m font-euclid text-light-fg-primary dark:text-dark-fg-primary"
             >
               {title}
             </h2>
@@ -195,7 +195,7 @@ export function Modal({
           {(text || children) ? (
             <div
               id={descId}
-              className="text-body-l text-light-fg-secondary dark:text-dark-fg-secondary font-euclid"
+              className="text-body-m-regular text-light-fg-secondary dark:text-dark-fg-secondary font-euclid"
             >
               {text}
               {children}

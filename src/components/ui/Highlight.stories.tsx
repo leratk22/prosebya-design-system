@@ -87,7 +87,7 @@ export const LongText: Story = {
       <div className="max-w-[200px] border border-[rgba(255,255,255,0.2)] p-8 rounded-s">
         <Highlight {...args} />
       </div>
-      <p className="text-body-s text-[rgba(255,255,255,0.6)] mt-8">
+      <p className="text-body-s-regular text-[rgba(255,255,255,0.6)] mt-8">
         Компонент ограничен родительским контейнером (200px). Векторы остаются по краям, текст обрезается без многоточия
       </p>
     </div>
@@ -110,13 +110,13 @@ export const VariantsComparison: Story = {
   render: () => (
     <div className="flex flex-col gap-24 p-16">
       <div>
-        <h3 className="text-title-m font-semibold mb-16">Default (светлый фон)</h3>
+        <h3 className="text-title-s mb-16">Default (светлый фон)</h3>
         <div className="bg-light-bg-primary p-24 rounded-m">
           <Highlight variant="default">слово или фраза</Highlight>
         </div>
       </div>
       <div>
-        <h3 className="text-title-m font-semibold mb-16">Inverted (темный фон)</h3>
+        <h3 className="text-title-s mb-16">Inverted (темный фон)</h3>
         <div className="bg-[#22263B] p-24 rounded-m">
           <Highlight variant="inverted">слово или фраза</Highlight>
         </div>
@@ -132,18 +132,18 @@ export const DesignTokens: Story = {
   render: () => (
     <div className="space-y-24 p-16 max-w-4xl">
       <div>
-        <h2 className="text-title-l font-semibold mb-16">Используемые токены</h2>
+        <h2 className="text-title-m mb-16">Используемые токены</h2>
         
         <div className="space-y-16">
           <section>
-            <h3 className="text-title-m font-semibold mb-12">Layout</h3>
+            <h3 className="text-title-s mb-12">Layout</h3>
             <div className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-m p-16 space-y-8">
               <div>
                 <h4 className="text-label-m font-medium mb-4">Структура</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   flex flex-row items-center justify-end gap-8
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   row, justifyContent: flex-end, alignItems: center, gap: 8px
                 </p>
               </div>
@@ -151,41 +151,41 @@ export const DesignTokens: Story = {
           </section>
 
           <section>
-            <h3 className="text-title-m font-semibold mb-12">Векторы</h3>
+            <h3 className="text-title-s mb-12">Векторы</h3>
             <div className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-m p-16 space-y-8">
               <div>
                 <h4 className="text-label-m font-medium mb-4">Размеры</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   width: 9.39px, height: 20px
                 </code>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Цвета (Default)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   rgba(34, 38, 59, 0.4)
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   core с прозрачностью 0.4
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Цвета (Inverted)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   rgba(255, 255, 255, 0.4)
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   белый с прозрачностью 0.4
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Зеркальное отражение</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   transform: scaleX(-1)
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   Правый вектор зеркально отражен
                 </p>
               </div>
@@ -193,48 +193,48 @@ export const DesignTokens: Story = {
           </section>
 
           <section>
-            <h3 className="text-title-m font-semibold mb-12">Типографика</h3>
+            <h3 className="text-title-s mb-12">Типографика</h3>
             <div className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-m p-16 space-y-8">
               <div>
                 <h4 className="text-label-m font-medium mb-4">Стиль</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   MVP2.0/Caption/S
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   font-size: 12px, line-height: 1.3333333333333333em, font-weight: 500 (Medium)
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Межбуквенное расстояние</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   letter-spacing: 0.1em (10%)
                 </code>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Регистр</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   text-transform: uppercase
                 </code>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Цвета (Default)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   rgba(34, 38, 59, 0.8)
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   core с прозрачностью 0.8
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Цвета (Inverted)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   rgba(255, 255, 255, 0.8)
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   белый с прозрачностью 0.8
                 </p>
               </div>

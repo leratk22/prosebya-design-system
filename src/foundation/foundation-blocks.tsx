@@ -1,10 +1,10 @@
 import * as React from "react";
+import { textStyles, type TextStyleToken, type TypeMode } from "../tokens/typography";
+import { gapTokens, spacingRules, spacingScale } from "../tokens/spacing";
 import {
   breakpoints,
   fontFamily,
   fontWeights,
-  letterSpacings,
-  lineHeights,
   numbers,
   primitiveColors,
   primitiveFor,
@@ -13,7 +13,6 @@ import {
   semanticColors,
   semanticValue,
   shadows,
-  textStyles,
   type ColorToken,
   type Theme,
 } from "./tokens";
@@ -34,8 +33,8 @@ function Section({
   return (
     <section className="flex flex-col gap-16">
       <div className="flex flex-col gap-4">
-        <h2 className="text-title-l font-semibold">{title}</h2>
-        {description && <p className="text-body-l text-light-fg-tertiary">{description}</p>}
+        <h2 className="text-title-m">{title}</h2>
+        {description && <p className="text-body-m-regular text-light-fg-tertiary">{description}</p>}
       </div>
       {children}
     </section>
@@ -60,7 +59,7 @@ function Swatch({ value, size = 56 }: { value: string; size?: number }) {
 }
 
 function Code({ children }: { children: React.ReactNode }) {
-  return <code className="font-mono text-body-m">{children}</code>;
+  return <code className="font-mono text-body-s-regular">{children}</code>;
 }
 
 /* ---------- Цвета ---------- */
@@ -111,7 +110,7 @@ function SemanticRow({ token, theme }: { token: ColorToken; theme: Theme }) {
         <span className="text-label-m font-medium">{token.name}</span>
         <span className="flex flex-wrap gap-x-12 gap-y-2" style={{ color: semanticValue(theme, "fg-tertiary") }}>
           <Code>{token.value}</Code>
-          <span className="text-body-m">
+          <span className="text-body-s-regular">
             {refs.length > 0 ? `→ ${refs.join(", ")}` : "→ нет примитива с таким значением"}
           </span>
         </span>
@@ -132,7 +131,7 @@ export function SemanticColors({ theme }: { theme: Theme }) {
     >
       {semanticColors(theme).map((group) => (
         <section key={group.key} className="flex flex-col gap-8">
-          <h2 className="text-title-l font-semibold">{group.label}</h2>
+          <h2 className="text-title-m">{group.label}</h2>
           <div className="grid gap-x-24" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))" }}>
             {group.tokens.map((token) => (
               <SemanticRow key={token.name} token={token} theme={theme} />
@@ -146,72 +145,104 @@ export function SemanticColors({ theme }: { theme: Theme }) {
 
 /* ---------- Типографика ---------- */
 
-export type Weight = "light" | "regular" | "medium" | "semibold" | "bold";
+const MODE_LABEL: Record<TypeMode, string> = { "320": "320", "375": "360–429", "430": "430+" };
 
-const weightValue = (weight: Weight) => fontWeights.find(([name]) => name === weight)?.[1];
+function styleTraits(style: TextStyleToken) {
+  const weight = fontWeights.find(([, value]) => Number(value) === style.weight)?.[0] ?? style.weight;
+  return [
+    weight,
+    style.italic && "italic",
+    style.underline && "underline",
+    style.uppercase && "uppercase",
+    style.tabularNums && "tabular-nums",
+    style.letterSpacing !== 0 && `трекинг ${Math.round(style.letterSpacing * 1000) / 10}%`,
+    style.paragraphSpacing && `абзац +${style.paragraphSpacing}`,
+  ]
+    .filter(Boolean)
+    .join(" · ");
+}
 
-/** Каждый текстовый стиль строкой-примером */
-export function TextStyles({ sample, weight }: { sample: string; weight: Weight }) {
+const GROUPS: Array<[string, string]> = [
+  ["title", "Title"],
+  ["body", "Body"],
+  ["label", "Label"],
+  ["content", "Content"],
+  ["numbers", "Numbers"],
+  ["caption", "Caption"],
+];
+
+/** Все текстовые стили Figma: пример, начертание и размеры на каждом брейкпоинте */
+export function TextStyles({ sample, mode }: { sample: string; mode: TypeMode }) {
   return (
     <Page>
       <Section
         title="Текстовые стили"
-        description={`Шрифт ${fontFamily[0]}. Стиль задаёт размер, высоту строки и трекинг; насыщенность задаётся отдельно классом font-*.`}
+        description={`${fontFamily[0]}: Regular, Medium, Semibold и курсивы. Стиль задаёт всё сразу — размер, высоту строки, трекинг и начертание. Размер меняется по ширине экрана; примеры показаны для ${MODE_LABEL[mode]} px.`}
       >
-        <div className="flex flex-col">
-          {textStyles.map((style) => (
-            <div
-              key={style.name}
-              className="grid items-baseline gap-16 border-b border-light-border-secondary py-16"
-              style={{ gridTemplateColumns: "minmax(120px, 160px) minmax(0, 1fr)" }}
-            >
-              <div className="flex flex-col gap-2">
-                <span className="text-label-m font-medium">{`text-${style.name}`}</span>
-                <span className="text-body-m text-light-fg-tertiary">
-                  {`${style.fontSize} / ${style.lineHeight}`}
-                  {style.letterSpacing !== "0" && ` · ${style.letterSpacing}`}
-                </span>
-              </div>
-              <p
-                style={{
-                  fontSize: style.fontSize,
-                  lineHeight: style.lineHeight,
-                  letterSpacing: style.letterSpacing,
-                  fontWeight: weightValue(weight),
-                }}
-              >
-                {sample}
-              </p>
+        {GROUPS.map(([prefix, label]) => {
+          const group = textStyles.filter((style) => style.name.startsWith(prefix));
+          return (
+            <div key={prefix} className="flex flex-col">
+              <h3 className="text-title-s pb-8">{label}</h3>
+              <p className="text-body-m-regular pb-8 text-light-fg-tertiary">{group[group.length - 1].usage}</p>
+              {group.map((style) => (
+                <div
+                  key={style.name}
+                  className="grid items-baseline gap-16 border-b border-light-border-secondary py-16"
+                  style={{ gridTemplateColumns: "minmax(200px, 240px) minmax(0, 1fr)" }}
+                >
+                  <div className="flex flex-col gap-4">
+                    <span className="text-label-m">{`text-${style.name}`}</span>
+                    <span className="text-body-s-regular text-light-fg-tertiary">{style.figma}</span>
+                    <span className="text-body-s-regular text-light-fg-tertiary">{styleTraits(style)}</span>
+                    <span className="text-body-s-regular text-light-fg-tertiary">
+                      {(Object.keys(MODE_LABEL) as TypeMode[])
+                        .map((key) => `${MODE_LABEL[key]}: ${style.metrics[key].size}/${style.metrics[key].lineHeight}`)
+                        .join(" · ")}
+                    </span>
+                  </div>
+                  <p
+                    style={{
+                      fontSize: style.metrics[mode].size,
+                      lineHeight: `${style.metrics[mode].lineHeight}px`,
+                      letterSpacing: `${style.letterSpacing}em`,
+                      fontWeight: style.weight,
+                      fontStyle: style.italic ? "italic" : undefined,
+                      textDecorationLine: style.underline ? "underline" : undefined,
+                      textTransform: style.uppercase ? "uppercase" : undefined,
+                      fontVariantNumeric: style.tabularNums ? "tabular-nums" : undefined,
+                    }}
+                  >
+                    {prefix === "numbers" ? "1 234 567,89 ₽" : sample}
+                  </p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          );
+        })}
       </Section>
     </Page>
   );
 }
 
-/** Насыщенности шрифта */
+/** Начертания шрифта */
 export function FontWeights({ sample }: { sample: string }) {
   return (
     <Page>
-      <Section title="Насыщенность" description="Классы font-light … font-bold.">
+      <Section title="Начертания" description="В Figma используются три начертания. Курсив есть у Semibold (Decorative, Content Bold-Italic) и Medium (Content Italic).">
         <div className="flex flex-col gap-16">
-          {fontWeights.map(([name, value]) => (
-            <div key={name} className="grid items-baseline gap-16" style={{ gridTemplateColumns: "160px minmax(0, 1fr)" }}>
-              <span className="text-label-m font-medium">
-                {`font-${name}`} <span className="text-body-m text-light-fg-tertiary">{value}</span>
-              </span>
-              <span className="text-title-l" style={{ fontWeight: Number(value) }}>
-                {sample}
-              </span>
-            </div>
-          ))}
-        </div>
-      </Section>
-      <Section title="Высота строки и трекинг" description="Отдельные токены leading-* и tracking-*.">
-        <div className="grid gap-24" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))" }}>
-          <TokenList entries={lineHeights} format={(name) => `leading-${name}`} />
-          <TokenList entries={letterSpacings} format={(name) => `tracking-${name}`} />
+          {fontWeights.flatMap(([name, value]) =>
+            [false, true].map((italic) => (
+              <div key={name + italic} className="grid items-baseline gap-16" style={{ gridTemplateColumns: "200px minmax(0, 1fr)" }}>
+                <span className="text-label-m">
+                  {`font-${name}${italic ? " italic" : ""}`} <span className="text-body-s-regular text-light-fg-tertiary">{value}</span>
+                </span>
+                <span className="text-title-m" style={{ fontWeight: Number(value), fontStyle: italic ? "italic" : "normal" }}>
+                  {sample}
+                </span>
+              </div>
+            )),
+          )}
         </div>
       </Section>
     </Page>
@@ -229,7 +260,7 @@ function TokenList({
     <div className="flex flex-col">
       {entries.map(([name, value]) => (
         <div key={name} className="flex justify-between gap-16 border-b border-light-border-secondary py-8">
-          <span className="text-label-m font-medium">{format(name)}</span>
+          <span className="text-label-m">{format(name)}</span>
           <Code>{value}</Code>
         </div>
       ))}
@@ -237,32 +268,59 @@ function TokenList({
   );
 }
 
-/* ---------- Числа, радиусы, тени, брейкпоинты ---------- */
-
-/** Сколько пикселей показывать полосой; большие значения — размеры экранов, их списком */
-const BAR_LIMIT = 160;
+/* ---------- Отступы, радиусы, тени, брейкпоинты ---------- */
 
 export function Spacing() {
-  const bars = numbers.filter(([, value]) => parseFloat(value) <= BAR_LIMIT);
-  const large = numbers.filter(([, value]) => parseFloat(value) > BAR_LIMIT);
+  const system = new Set(spacingScale.map((step) => step.value));
+  const extra = numbers.filter(([, value]) => !system.has(parseFloat(value)));
   return (
     <Page>
       <Section
-        title="Numbers — отступы и размеры"
-        description="Одна шкала на отступы (p-*, m-*, gap-*), размеры шрифтов и размеры элементов. Значения вне шкалы не используются."
+        title="Шкала отступов"
+        description="Системные значения из Figma для отступов и промежутков: p-*, m-*, gap-*. Шкалу не расширяем без явной необходимости."
       >
-        <div className="flex flex-col gap-8">
-          {bars.map(([name, value]) => (
-            <div key={name} className="grid items-center gap-16" style={{ gridTemplateColumns: "56px minmax(0, 1fr)" }}>
-              <span className="text-label-m font-medium">{name}</span>
-              <div className="h-16 rounded-checkbox bg-brand-orange" style={{ width: value }} />
+        <div className="flex flex-col">
+          {spacingScale.map((step) => (
+            <div
+              key={step.value}
+              className="grid items-center gap-16 border-b border-light-border-secondary py-12"
+              style={{ gridTemplateColumns: "96px 136px minmax(0, 1fr)" }}
+            >
+              <div className="flex flex-col">
+                <span className="text-label-m">{`${step.value} px`}</span>
+                <span className="text-body-s-regular text-light-fg-tertiary">{step.name}</span>
+              </div>
+              <div className="h-16 rounded-checkbox bg-brand-orange" style={{ width: step.value }} />
+              <span className="text-body-m-regular text-light-fg-secondary">{step.usage}</span>
             </div>
           ))}
         </div>
-        <p className="text-body-l text-light-fg-tertiary">
-          Крупные значения шкалы (ширины экранов и контейнеров):{" "}
-          {large.map(([, value]) => value).join(", ")}
-        </p>
+      </Section>
+      <Section title="Как выбирать" description="Правила со страницы Spacing в Figma.">
+        <ul className="flex list-disc flex-col gap-8 pl-20 text-body-m-regular">
+          {spacingRules.map((rule) => (
+            <li key={rule}>{rule}</li>
+          ))}
+        </ul>
+      </Section>
+      <Section
+        title="Gap на узком экране"
+        description="Переменные Gap из коллекции Layout: на ширине 320 шаг на ступень меньше. В коде пока не подключены."
+      >
+        <div className="grid gap-x-24" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))" }}>
+          {gapTokens.map((gap) => (
+            <div key={gap.name} className="flex justify-between gap-16 border-b border-light-border-secondary py-8">
+              <span className="text-label-m">{gap.name}</span>
+              <Code>{`${gap["320"]} → ${gap["375"]}`}</Code>
+            </div>
+          ))}
+        </div>
+      </Section>
+      <Section
+        title="Остальные числа"
+        description="Шкала Numbers в коде шире: эти значения нужны для размеров элементов и экранов (w-*, h-*, max-w-*), а не для отступов."
+      >
+        <p className="text-body-m-regular text-light-fg-tertiary">{extra.map(([, value]) => value).join(", ")}</p>
       </Section>
     </Page>
   );

@@ -74,7 +74,7 @@ function Meta({ time, outgoing, status }: Pick<ChatBubbleProps, "time" | "outgoi
   }
   return (
     <div className="flex items-center gap-4 rounded-[4px]">
-      <span className="font-euclid text-body-s text-light-fg-tertiary text-right whitespace-nowrap">{time}</span>
+      <span className="font-euclid text-body-s-regular text-light-fg-tertiary text-right whitespace-nowrap">{time}</span>
       {outgoing && status === "sent" && (
         <img src="/icons/chat/read-16.svg" alt="Доставлено" width={16} height={16} className="opacity-60" />
       )}
@@ -181,7 +181,7 @@ export const ChatBubble = React.forwardRef<HTMLDivElement, ChatBubbleProps>(
               {outgoing && status === "sending" ? (
                 <img src="/icons/chat/clock-16-inverted.svg" alt="Отправляется" width={16} height={16} />
               ) : (
-                <span className="w-32 text-center font-euclid text-body-s text-light-fg-inverted-secondary">{time}</span>
+                <span className="w-32 text-center font-euclid text-body-s-regular text-light-fg-inverted-secondary">{time}</span>
               )}
             </div>
           )}
@@ -211,7 +211,7 @@ export const ChatBubble = React.forwardRef<HTMLDivElement, ChatBubbleProps>(
             />
           ) : (
             <div className={["flex items-end pr-4", isWideMessage ? "w-full" : ""].join(" ")}>
-              <p className="flex-1 font-euclid text-body-xl text-light-fg-primary break-words whitespace-pre-line">
+              <p className="flex-1 font-euclid text-body-l-regular text-light-fg-primary break-words whitespace-pre-line">
                 {message}
               </p>
             </div>

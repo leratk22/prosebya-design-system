@@ -243,79 +243,79 @@ export const DesignTokens: Story = {
   render: () => (
     <div className="space-y-24 p-16 max-w-4xl">
       <div>
-        <h2 className="text-title-l font-semibold mb-16">Используемые токены</h2>
+        <h2 className="text-title-m mb-16">Используемые токены</h2>
         
         <div className="space-y-16">
           <section>
-            <h3 className="text-title-m font-semibold mb-12">Карточка</h3>
+            <h3 className="text-title-s mb-12">Карточка</h3>
             <div className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-m p-16 space-y-8">
               <div>
                 <h4 className="text-label-m font-medium mb-4">Фон</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   backgroundColor (yellow/orange/red/blue/gray)
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   Желтый: #FFE699, Оранжевый: #FFB899, Красный: #FF9999, Голубой: #A6C1F2, Серый: #E0E5EF
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точные значения:</strong> background-color: #FFE699 (yellow), #FFB899 (orange), #FF9999 (red), #A6C1F2 (blue), #E0E5EF (gray)
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Примечание:</strong> Для серого фона автоматически используется иллюстрация из желтой карточки.
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>В разработке:</strong> Цвет не выбирается из значений, а задается любой HEX.
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Граница</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   border border-[rgba(52,64,121,0.14)]
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   rgba(52, 64, 121, 0.14)
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точное значение:</strong> border: 1px solid rgba(52, 64, 121, 0.14)
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Радиус скругления</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   rounded-m
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   16px (radius-m)
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точное значение:</strong> border-radius: 16px
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Высота</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   h-[235px]
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   235px (фиксированная для всех размеров экрана)
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точное значение:</strong> height: 235px
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Максимальная ширина (Desktop)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   md:max-w-[756px]
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   756px только для desktop
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точное значение:</strong> max-width: 756px
                 </p>
               </div>
@@ -323,43 +323,43 @@ export const DesignTokens: Story = {
           </section>
 
           <section>
-            <h3 className="text-title-m font-semibold mb-12">Текстовая часть</h3>
+            <h3 className="text-title-s mb-12">Текстовая часть</h3>
             <div className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-m p-16 space-y-8">
               <div>
                 <h4 className="text-label-m font-medium mb-4">Отступы (Mobile)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   p-20
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   20px со всех сторон (токен Numbers)
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точное значение:</strong> padding: 20px
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Отступы (Desktop)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   md:py-24 md:pr-64 md:pl-20
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   paddingTop: 24px, paddingBottom: 24px, paddingRight: 64px, paddingLeft: 20px
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точные значения:</strong> padding-top: 24px, padding-bottom: 24px, padding-right: 64px, padding-left: 20px
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Промежуток между элементами</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   gap-10
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   10px между заголовком и badge (токен Numbers)
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точное значение:</strong> gap: 10px
                 </p>
               </div>
@@ -367,43 +367,43 @@ export const DesignTokens: Story = {
           </section>
 
           <section>
-            <h3 className="text-title-m font-semibold mb-12">Изображение</h3>
+            <h3 className="text-title-s mb-12">Изображение</h3>
             <div className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-m p-16 space-y-8">
               <div>
                 <h4 className="text-label-m font-medium mb-4">Размер контейнера (Mobile)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   longread-card-image
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   182px × 166px
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точные значения:</strong> width: 182px, height: 166px
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Размер контейнера (Desktop)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   longread-card-image (md:)
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   273px × 249px (для масштабированного изображения)
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точные значения:</strong> width: 273px, height: 249px (desktop)
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Масштабирование изображения (Desktop)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   longread-card-img transform: scale(1.5)
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   Изображение масштабируется на 150% от исходного размера (182×166px → 273×249px)
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точное значение:</strong> transform: scale(1.5), transform-origin: bottom right
                 </p>
               </div>
@@ -411,30 +411,30 @@ export const DesignTokens: Story = {
           </section>
 
           <section>
-            <h3 className="text-title-m font-semibold mb-12">Типографика</h3>
+            <h3 className="text-title-s mb-12">Типографика</h3>
             <div className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-m p-16 space-y-8">
               <div>
                 <h4 className="text-label-m font-medium mb-4">Заголовок (Mobile)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   longread-card-title font-medium font-euclid text-[#22263B] line-clamp-3
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   MVP2.0/Title/M, Medium, Euclid Circular A
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точные значения:</strong> font-size: 20px, line-height: 1.2em, font-weight: 500 (Medium), color: #22263B, letter-spacing: -0.01em (-1%), максимум 3 строки
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Заголовок (Desktop)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   longread-card-title font-medium font-euclid text-[#22263B] line-clamp-3
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   MVP2.0/Title/L, Medium, Euclid Circular A
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точные значения:</strong> font-size: 24px, line-height: 1.3333333333333333em (32px), font-weight: 500 (Medium), color: #22263B, letter-spacing: -0.015em (-1.5%), максимум 3 строки
                 </p>
               </div>

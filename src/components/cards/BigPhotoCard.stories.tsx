@@ -188,7 +188,7 @@ export const ThemesComparison: Story = {
   render: () => (
     <div className="flex flex-col gap-24">
       <div>
-        <h3 className="text-title-m font-semibold mb-16">Светлая тема</h3>
+        <h3 className="text-title-s mb-16">Светлая тема</h3>
         <div className="bg-light-bg-primary p-24 rounded-m">
           <BigPhotoCard
             subtitle="Практика"
@@ -201,7 +201,7 @@ export const ThemesComparison: Story = {
         </div>
       </div>
       <div>
-        <h3 className="text-title-m font-semibold mb-16">Темная тема</h3>
+        <h3 className="text-title-s mb-16">Темная тема</h3>
         <div className="dark bg-light-bg-primary p-24 rounded-m">
           <BigPhotoCard
             subtitle="Практика"
@@ -224,7 +224,7 @@ export const PlaceholderThemesComparison: Story = {
   render: () => (
     <div className="flex flex-col gap-24">
       <div>
-        <h3 className="text-title-m font-semibold mb-16">Светлая тема (с заглушкой)</h3>
+        <h3 className="text-title-s mb-16">Светлая тема (с заглушкой)</h3>
         <div className="bg-light-bg-primary p-24 rounded-m">
           <BigPhotoCard
             subtitle="Практика"
@@ -235,7 +235,7 @@ export const PlaceholderThemesComparison: Story = {
         </div>
       </div>
       <div>
-        <h3 className="text-title-m font-semibold mb-16">Темная тема (с заглушкой)</h3>
+        <h3 className="text-title-s mb-16">Темная тема (с заглушкой)</h3>
         <div className="dark bg-light-bg-primary p-24 rounded-m">
           <BigPhotoCard
             subtitle="Практика"
@@ -325,7 +325,7 @@ export const ImageLoading: Story = {
               )}
               {args.subtitle && (
                 <div className="hidden md:block">
-                  <p className="font-medium font-euclid text-light-fg-secondary dark:text-dark-fg-secondary text-caption-s uppercase">
+                  <p className=" font-euclid text-light-fg-secondary dark:text-dark-fg-secondary text-caption-s uppercase">
                     {args.subtitle}
                   </p>
                 </div>
@@ -382,48 +382,48 @@ export const DesignTokens: Story = {
   render: () => (
     <div className="space-y-24 p-16 max-w-4xl">
       <div>
-        <h2 className="text-title-l font-semibold mb-16">Используемые токены</h2>
+        <h2 className="text-title-m mb-16">Используемые токены</h2>
         
         <div className="space-y-16">
           <section>
-            <h3 className="text-title-m font-semibold mb-12">Карточка</h3>
+            <h3 className="text-title-s mb-12">Карточка</h3>
             <div className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-m p-16 space-y-8">
               <div>
                 <h4 className="text-label-m font-medium mb-4">Фон</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   bg-light-bg-primary dark:bg-dark-bg-primary
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   #FFFFFF (светлая тема), #22263b (темная тема)
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Граница</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   border-light-border-secondary dark:border-dark-border-secondary
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   rgba(34, 38, 59, 0.1) - светлая тема, rgba(255, 255, 255, 0.1) - темная тема
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Высота</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   h-[235px] md:h-[251px]
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   Mobile: 235px, Desktop: 251px
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Максимальная ширина (Desktop)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   md:max-w-[756px]
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   756px только для desktop
                 </p>
               </div>
@@ -431,14 +431,14 @@ export const DesignTokens: Story = {
           </section>
 
           <section>
-            <h3 className="text-title-m font-semibold mb-12">Изображение</h3>
+            <h3 className="text-title-s mb-12">Изображение</h3>
             <div className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-m p-16 space-y-8">
               <div>
                 <h4 className="text-label-m font-medium mb-4">Ширина</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   w-[136px] md:w-[120px]
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   Mobile: 136px, Desktop: 120px
                 </p>
               </div>
@@ -446,60 +446,60 @@ export const DesignTokens: Story = {
           </section>
 
           <section>
-            <h3 className="text-title-m font-semibold mb-12">Типографика</h3>
+            <h3 className="text-title-s mb-12">Типографика</h3>
             <div className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-m p-16 space-y-8">
               <div>
                 <h4 className="text-label-m font-medium mb-4">Subtitle (Desktop)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   text-light-fg-secondary dark:text-dark-fg-secondary
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   MVP2.0/Caption/S, fontSize: 12px, lineHeight: 1.333em, letterSpacing: 0.1em (10%), uppercase
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Subtitle Badge (Mobile)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   bg-core-alpha-5 dark:bg-core-inverted-alpha-10
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   rgba(34, 38, 59, 0.05) - светлая тема, rgba(255, 255, 255, 0.1) - темная тема
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Заголовок (Mobile)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   text-[20px] leading-[1.2em] tracking-[-0.01em] font-medium
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   MVP2.0/Title/M, fontSize: 20px, lineHeight: 1.2em, letterSpacing: -1%, font-weight: 500 (Medium)
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точные значения:</strong> font-size: 20px, line-height: 1.2em, font-weight: 500 (Medium), letter-spacing: -0.01em (-1%)
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Заголовок (Desktop)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   md:text-[24px] md:leading-[1.333em] md:tracking-[-0.015em] font-medium
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   MVP2.0/Title/L, fontSize: 24px, lineHeight: 1.333em, letterSpacing: -1.5%, font-weight: 500 (Medium)
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точные значения:</strong> font-size: 24px, line-height: 1.333em, font-weight: 500 (Medium), letter-spacing: -0.015em (-1.5%)
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Label</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   text-[12px] md:text-[14px] text-light-fg-tertiary dark:text-dark-fg-tertiary
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   Mobile: Body/S-Medium (12px), Desktop: Body/M-Medium (14px)
                 </p>
               </div>
@@ -507,24 +507,24 @@ export const DesignTokens: Story = {
           </section>
 
           <section>
-            <h3 className="text-title-m font-semibold mb-12">Badge с длительностью</h3>
+            <h3 className="text-title-s mb-12">Badge с длительностью</h3>
             <div className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-m p-16 space-y-8">
               <div>
                 <h4 className="text-label-m font-medium mb-4">Светлая тема</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   bg-[rgba(34,38,59,0.6)] text-[#FFFFFF]
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   backgroundColor: rgba(34, 38, 59, 0.6), color: #FFFFFF
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Темная тема</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   dark:bg-[rgba(255,255,255,0.6)] dark:text-[#22263B]
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   backgroundColor: rgba(255, 255, 255, 0.6), color: #22263B
                 </p>
               </div>

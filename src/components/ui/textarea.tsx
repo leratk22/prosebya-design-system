@@ -38,11 +38,11 @@ export interface TextareaProps
 }
 
 const underlineBase =
-  "w-full text-body-l font-regular text-light-fg-primary bg-transparent " +
+  "w-full text-body-m-regular text-light-fg-primary bg-transparent " +
   "border-0 border-b resize-none shadow-none placeholder:text-light-fg-muted " +
   "focus:outline-none focus:ring-0 ";
 const filledBase =
-  "w-full px-12 py-8 text-body-l font-regular text-light-fg-primary " +
+  "w-full px-12 py-8 text-body-m-regular text-light-fg-primary " +
   "bg-light-bg-tertiary border border-light-border-primary rounded-s " +
   "resize-none placeholder:text-light-fg-muted " +
   "focus:outline-none focus:ring-2 focus:ring-brand-blue-alpha-10 focus:border-light-border-accent";
@@ -197,7 +197,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
               >
                 <label
                   htmlFor={textareaId}
-                  className="block text-body-s font-regular text-light-fg-muted px-12 pt-8 pb-4 shrink-0 cursor-text"
+                  className="block text-body-s-regular text-light-fg-muted px-12 pt-8 pb-4 shrink-0 cursor-text"
                 >
                   {label}
                 </label>

@@ -95,29 +95,8 @@ export function primitiveFor(value: string): string[] {
 
 /* ---------- Типографика ---------- */
 
-export interface TextStyle {
-  name: string;
-  fontSize: string;
-  lineHeight: string;
-  letterSpacing: string;
-}
-
-type FontSizeValue = string | [string, { lineHeight?: string; letterSpacing?: string }];
-const fontSize = extend.fontSize as Record<string, FontSizeValue>;
-
-export const textStyles: TextStyle[] = Object.entries(fontSize)
-  .filter((entry): entry is [string, Exclude<FontSizeValue, string>] => Array.isArray(entry[1]))
-  .map(([name, [size, options]]) => ({
-    name,
-    fontSize: size,
-    lineHeight: options.lineHeight ?? "",
-    letterSpacing: options.letterSpacing ?? "0",
-  }));
-
 export const fontFamily = (extend.fontFamily as Record<string, string[]>).euclid;
 export const fontWeights = Object.entries(extend.fontWeight as Record<string, string>);
-export const lineHeights = Object.entries(extend.lineHeight as Record<string, string>);
-export const letterSpacings = Object.entries(extend.letterSpacing as Record<string, string>);
 
 /* ---------- Числа, радиусы, тени, брейкпоинты ---------- */
 

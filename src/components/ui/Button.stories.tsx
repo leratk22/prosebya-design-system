@@ -83,19 +83,19 @@ export const LoadingVariants: Story = {
   render: () => (
     <div className="flex flex-col gap-16 max-w-xs">
       <div>
-        <h3 className="text-title-m font-semibold mb-8">Primary Loading</h3>
+        <h3 className="text-title-s mb-8">Primary Loading</h3>
         <Button variant="primary" size="m" loading>
           Loading
         </Button>
       </div>
       <div>
-        <h3 className="text-title-m font-semibold mb-8">Secondary Loading</h3>
+        <h3 className="text-title-s mb-8">Secondary Loading</h3>
         <Button variant="secondary" size="m" loading>
           Loading
         </Button>
       </div>
       <div>
-        <h3 className="text-title-m font-semibold mb-8">Tertiary Loading</h3>
+        <h3 className="text-title-s mb-8">Tertiary Loading</h3>
         <Button variant="tertiary" size="m" loading>
           Loading
         </Button>
@@ -108,19 +108,19 @@ export const LoadingSizes: Story = {
   render: () => (
     <div className="flex flex-col gap-16 max-w-xs">
       <div>
-        <h3 className="text-title-m font-semibold mb-8">Large (L)</h3>
+        <h3 className="text-title-s mb-8">Large (L)</h3>
         <Button variant="primary" size="l" loading>
           Loading
         </Button>
       </div>
       <div>
-        <h3 className="text-title-m font-semibold mb-8">Medium (M)</h3>
+        <h3 className="text-title-s mb-8">Medium (M)</h3>
         <Button variant="primary" size="m" loading>
           Loading
         </Button>
       </div>
       <div>
-        <h3 className="text-title-m font-semibold mb-8">Small (S)</h3>
+        <h3 className="text-title-s mb-8">Small (S)</h3>
         <Button variant="primary" size="s" loading>
           Loading
         </Button>
@@ -133,13 +133,13 @@ export const LoadingInverted: Story = {
   render: () => (
     <div className="flex flex-col gap-16 max-w-xs">
       <div>
-        <h3 className="text-title-m font-semibold mb-8">Secondary Inverted Loading</h3>
+        <h3 className="text-title-s mb-8">Secondary Inverted Loading</h3>
         <Button variant="secondary" inverted size="m" loading>
           Loading
         </Button>
       </div>
       <div>
-        <h3 className="text-title-m font-semibold mb-8">Tertiary Inverted Loading</h3>
+        <h3 className="text-title-s mb-8">Tertiary Inverted Loading</h3>
         <Button variant="tertiary" inverted size="m" loading>
           Loading
         </Button>

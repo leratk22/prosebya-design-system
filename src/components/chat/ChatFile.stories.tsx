@@ -57,7 +57,7 @@ export const AllVariants: Story = {
     <div className="flex flex-wrap gap-32">
       {(["brand", "neutral"] as const).map((tone) => (
         <div key={tone} className="flex w-[267px] flex-col gap-16">
-          <p className="font-euclid text-body-s text-light-fg-tertiary">tone = {tone}</p>
+          <p className="font-euclid text-body-s-regular text-light-fg-tertiary">tone = {tone}</p>
           {(["uploaded", "loading", "reload"] as const).map((state) => (
             <ChatFile key={state} {...args} tone={tone} state={state} />
           ))}

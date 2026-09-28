@@ -61,7 +61,7 @@ export const ButtonExpand = React.forwardRef<
     // Определяем размер для стилей
     const buttonSize: ButtonSize = size === "m" ? "l" : "m";
     const SIZE_CLASSES: Record<ButtonSize, string> = {
-      l: "text-title-s md:text-label-l",
+      l: "text-label-m md:text-label-l",
       m: "text-label-m",
       s: "text-label-s",
     };

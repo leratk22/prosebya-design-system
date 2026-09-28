@@ -104,99 +104,99 @@ export const DesignTokens: Story = {
   render: () => (
     <div className="space-y-24 p-16 max-w-4xl">
       <div>
-        <h2 className="text-title-l font-semibold mb-16">Используемые токены</h2>
+        <h2 className="text-title-m mb-16">Используемые токены</h2>
         
         <div className="space-y-16">
           <section>
-            <h3 className="text-title-m font-semibold mb-12">Карточка</h3>
+            <h3 className="text-title-s mb-12">Карточка</h3>
             <div className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-m p-16 space-y-8">
               <div>
                 <h4 className="text-label-m font-medium mb-4">Фон</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   bg-[#22263B]
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   Темный фон без переключения темы
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точное значение:</strong> background-color: #22263B
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Радиус скругления</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   rounded-m
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   16px (radius-m)
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точное значение:</strong> border-radius: 16px
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Отступы (Mobile)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   p-24 px-32
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   padding: 24px 32px
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точные значения:</strong> padding-top: 24px, padding-bottom: 24px, padding-left: 32px, padding-right: 32px
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Отступы (Desktop)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   md:p-32 md:px-64
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   padding: 32px 64px
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точные значения:</strong> padding-top: 32px, padding-bottom: 32px, padding-left: 64px, padding-right: 64px
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Промежутки между элементами</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   gap-12
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   12px между элементами (токен Numbers)
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точное значение:</strong> gap: 12px
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Максимальная ширина (Desktop)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   md:max-w-[756px]
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   756px только для desktop
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точное значение:</strong> max-width: 756px
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Высота</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   h-auto
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   Высота адаптируется под текст
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точное значение:</strong> height: auto
                 </p>
               </div>
@@ -204,24 +204,24 @@ export const DesignTokens: Story = {
           </section>
 
           <section>
-            <h3 className="text-title-m font-semibold mb-12">Фоновые SVG (только Desktop)</h3>
+            <h3 className="text-title-s mb-12">Фоновые SVG (только Desktop)</h3>
             <div className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-m p-16 space-y-8">
               <div>
                 <h4 className="text-label-m font-medium mb-4">Vector 810</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   left: -70px, top: -209.92px, width: 359.39px, height: 433.14px, opacity: 0.06
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   Левая фоновая SVG декорация
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Vector 811</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   left: 446.61px, top: -189.92px, width: 359.39px, height: 433.14px, opacity: 0.06
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   Правая фоновая SVG декорация
                 </p>
               </div>
@@ -229,56 +229,56 @@ export const DesignTokens: Story = {
           </section>
 
           <section>
-            <h3 className="text-title-m font-semibold mb-12">Типографика</h3>
+            <h3 className="text-title-s mb-12">Типографика</h3>
             <div className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-m p-16 space-y-8">
               <div>
                 <h4 className="text-label-m font-medium mb-4">Заголовок (Mobile)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   banner-card-title font-medium font-euclid text-[#FFFFFF]
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   MVP2.0/Title/M, Medium, Euclid Circular A, белый цвет
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точные значения:</strong> font-size: 20px, line-height: 1.2em, font-weight: 500 (Medium), color: #FFFFFF, letter-spacing: -0.01em (-1%), text-align: center
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Заголовок (Desktop)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   banner-card-title font-medium font-euclid text-[#FFFFFF]
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   MVP2.0/Title/L, Medium, Euclid Circular A, белый цвет
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точные значения:</strong> font-size: 24px, line-height: 1.3333333333333333em, font-weight: 500 (Medium), color: #FFFFFF, letter-spacing: -0.015em (-1.5%), text-align: center
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Описание (Mobile)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   banner-card-description font-regular font-euclid text-[rgba(255,255,255,0.8)] line-clamp-3
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   MVP2.0/Body/S-Regular, Regular, Euclid Circular A, белый цвет с прозрачностью 0.8
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точные значения:</strong> font-size: 12px, line-height: 1.3333333333333333em, font-weight: 400 (Regular), color: rgba(255, 255, 255, 0.8), text-align: center, максимум 3 строки
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Описание (Desktop)</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   banner-card-description font-regular font-euclid text-[rgba(255,255,255,0.8)] line-clamp-2
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   MVP2.0/Body/M-Regular, Regular, Euclid Circular A, белый цвет с прозрачностью 0.8
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точные значения:</strong> font-size: 14px, line-height: 1.4285714285714286em, font-weight: 400 (Regular), color: rgba(255, 255, 255, 0.8), text-align: center, максимум 2 строки
                 </p>
               </div>
@@ -286,27 +286,27 @@ export const DesignTokens: Story = {
           </section>
 
           <section>
-            <h3 className="text-title-m font-semibold mb-12">Компонент Highlight</h3>
+            <h3 className="text-title-s mb-12">Компонент Highlight</h3>
             <div className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-m p-16 space-y-8">
               <div>
                 <h4 className="text-label-m font-medium mb-4">Структура</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   row, justifyContent: flex-end, alignItems: center, gap: 8px
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   Два декоративных вектора по бокам, текст в центре
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Поведение при ограничении</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   max-w-full, min-w-0
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   Компонент ограничивается родительским контейнером. Когда достигает ограничения:
                 </p>
-                <ul className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-2 list-disc list-inside space-y-1">
+                <ul className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-2 list-disc list-inside space-y-1">
                   <li>Компонент перестает расширяться</li>
                   <li>Векторы остаются видимыми по краям (не сжимаются благодаря shrink-0)</li>
                   <li>Текст обрезается без многоточия (text-overflow: clip)</li>
@@ -315,26 +315,26 @@ export const DesignTokens: Story = {
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Текст</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   MVP2.0/Caption/S, font-weight: 500, color: rgba(255, 255, 255, 0.8), text-transform: uppercase
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   Medium, Euclid Circular A, белый цвет с прозрачностью 0.8, верхний регистр
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точные значения:</strong> font-size: 12px, line-height: 1.3333333333333333em, letter-spacing: 0.1em (10%), font-weight: 500 (Medium), color: rgba(255, 255, 255, 0.8)
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Векторы</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   width: 9.39px, height: 20px, opacity: 0.4
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   Декоративные SVG элементы по бокам текста
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точные значения:</strong> width: 9.39px, height: 20px, opacity: 0.4 (rgba(255, 255, 255, 0.4))
                 </p>
               </div>
@@ -342,30 +342,30 @@ export const DesignTokens: Story = {
           </section>
 
           <section>
-            <h3 className="text-title-m font-semibold mb-12">Адаптивность</h3>
+            <h3 className="text-title-s mb-12">Адаптивность</h3>
             <div className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-m p-16 space-y-8">
               <div>
                 <h4 className="text-label-m font-medium mb-4">Брейкпоинт</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   md:
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   Переход между mobile и desktop версиями происходит на брейкпоинте md
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точное значение:</strong> @media (min-width: md)
                 </p>
               </div>
               
               <div>
                 <h4 className="text-label-m font-medium mb-4">Фоновые SVG</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   hidden md:block
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   Фоновые SVG отображаются только на desktop
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точное значение:</strong> display: none (mobile), display: block (desktop)
                 </p>
               </div>
@@ -373,17 +373,17 @@ export const DesignTokens: Story = {
           </section>
 
           <section>
-            <h3 className="text-title-m font-semibold mb-12">Интерактивность</h3>
+            <h3 className="text-title-s mb-12">Интерактивность</h3>
             <div className="bg-light-bg-secondary dark:bg-dark-bg-secondary rounded-m p-16 space-y-8">
               <div>
                 <h4 className="text-label-m font-medium mb-4">Hover эффект</h4>
-                <code className="text-body-s bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
+                <code className="text-body-s-regular bg-light-bg-primary dark:bg-dark-bg-primary px-8 py-4 rounded-s block">
                   hover:opacity-90 transition-opacity
                 </code>
-                <p className="text-body-s text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
+                <p className="text-body-s-regular text-light-fg-secondary dark:text-dark-fg-secondary mt-4">
                   Применяется только если передан onClick. Плавное изменение прозрачности до 90%
                 </p>
-                <p className="text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
+                <p className="text-body-s-regular text-light-fg-tertiary dark:text-dark-fg-tertiary mt-2">
                   <strong>Точные значения:</strong> opacity: 0.9 (hover), transition: opacity (плавный переход)
                 </p>
               </div>

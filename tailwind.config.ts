@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import { textStyles, TYPE_BREAKPOINTS, sizeVar, lineHeightVar } from './src/tokens/typography'
 
 const config: Config = {
   content: [
@@ -279,23 +280,6 @@ const config: Config = {
         '999': '999px',
         '1024': '1024px',
         '1440': '1440px',
-        // Типографические стили (адаптивные для брейкпоинта 320px)
-        'title-xl': ['24px', { lineHeight: '28px', letterSpacing: '-0.02em' }], // -2% для больших заголовков
-        'title-l': ['20px', { lineHeight: '24px', letterSpacing: '-0.015em' }], // -1.5% для заголовков L
-        'title-m': ['16px', { lineHeight: '20px', letterSpacing: '-0.01em' }], // -1% для заголовков M
-        'title-s': ['14px', { lineHeight: '16px', letterSpacing: '0' }],
-        'body-xl': ['16px', { lineHeight: '24px', letterSpacing: '0' }],
-        'body-l': ['14px', { lineHeight: '20px', letterSpacing: '0' }],
-        'body-m': ['12px', { lineHeight: '16px', letterSpacing: '0' }],
-        'body-s': ['12px', { lineHeight: '16px', letterSpacing: '0' }],
-        'content-l': ['14px', { lineHeight: '20px', letterSpacing: '0' }],
-        'label-l': ['16px', { lineHeight: '20px', letterSpacing: '0' }],   // Label/L
-        'label-m': ['14px', { lineHeight: '20px', letterSpacing: '0' }],   // Label/M
-        'label-s': ['12px', { lineHeight: '16px', letterSpacing: '0' }],   // Label/S
-        'label-xs': ['10px', { lineHeight: '12px', letterSpacing: '0' }],
-        'number-l': ['14px', { lineHeight: '20px', letterSpacing: '0' }],
-        'number-s': ['10px', { lineHeight: '12px', letterSpacing: '0' }],
-        'caption-s': ['10px', { lineHeight: '12px', letterSpacing: '0.1em' }],
       },
       // Высота строки
       lineHeight: {
@@ -306,25 +290,6 @@ const config: Config = {
         'normal': '1.5',
         'relaxed': '1.625',
         'loose': '2',
-      },
-      // Межбуквенное расстояние
-      letterSpacing: {
-        'title-xl': '-0.02em', // -2% для больших заголовков
-        'title-l': '-0.015em', // -1.5% для заголовков L
-        'title-m': '-0.01em', // -1% для заголовков M
-        'title-s': '0',
-        'body-xl': '0',
-        'body-l': '0',
-        'body-m': '0',
-        'body-s': '0',
-        'content-l': '0',
-        'label-l': '0',
-        'label-m': '0',
-        'label-s': '0',
-        'label-xs': '0',
-        'number-l': '0',
-        'number-s': '0',
-        'caption-s': '0.1em',
       },
       // Отступы (spacing) — используем значения из Numbers
       spacing: {
@@ -422,17 +387,52 @@ const config: Config = {
       boxShadow: {
         'elevation': '0 12px 24px -4px rgba(34, 38, 59, 0.05)',
       },
-      // Насыщенность шрифта
+      // Насыщенность шрифта: в Figma три начертания
       fontWeight: {
-        light: '300',
         regular: '400',
         medium: '500',
         semibold: '600',
-        bold: '700',
       },
     },
   },
   plugins: [
+    // Текстовые стили Figma: размер и высота строки меняются по брейкпоинтам через CSS-переменные.
+    // Слой components, чтобы font-*, uppercase и т. п. в разметке могли переопределить стиль.
+    function({ addBase, addComponents }: any) {
+      const modes = Object.entries(TYPE_BREAKPOINTS) as Array<[keyof typeof TYPE_BREAKPOINTS, number]>
+      const varsFor = (mode: keyof typeof TYPE_BREAKPOINTS) =>
+        Object.fromEntries(
+          textStyles.flatMap((style) => [
+            [sizeVar(style.name), `${style.metrics[mode].size}px`],
+            [lineHeightVar(style.name), `${style.metrics[mode].lineHeight}px`],
+          ]),
+        )
+      addBase(
+        Object.fromEntries(
+          modes.map(([mode, minWidth]) =>
+            minWidth === 0 ? [':root', varsFor(mode)] : [`@media (min-width: ${minWidth}px)`, { ':root': varsFor(mode) }],
+          ),
+        ),
+      )
+      addComponents(
+        Object.fromEntries(
+          textStyles.map((style) => [
+            `.text-${style.name}`,
+            {
+              fontSize: `var(${sizeVar(style.name)})`,
+              lineHeight: `var(${lineHeightVar(style.name)})`,
+              letterSpacing: style.letterSpacing ? `${style.letterSpacing}em` : '0',
+              fontWeight: String(style.weight),
+              ...(style.italic && { fontStyle: 'italic' }),
+              ...(style.underline && { textDecorationLine: 'underline' }),
+              ...(style.uppercase && { textTransform: 'uppercase' }),
+              ...(style.tabularNums && { fontVariantNumeric: 'tabular-nums' }),
+              ...(style.paragraphSpacing && { '& p + p': { marginTop: `${style.paragraphSpacing}px` } }),
+            },
+          ]),
+        ),
+      )
+    },
     function({ addUtilities, theme }: any) {
       const colors = theme('colors') || {};
       

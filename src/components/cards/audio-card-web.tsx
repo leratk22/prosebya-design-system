@@ -103,7 +103,7 @@ export const AudioCardWeb = React.forwardRef<
           )}
           {/* Desktop: заголовок слева, badge справа */}
           <div className="hidden md:flex flex-1 flex-col items-start min-w-0">
-            <h3 className="w-full relative text-title-l font-medium font-euclid text-light-fg-primary tracking-title-l [line-height:32px] [display:-webkit-inline-box] overflow-hidden text-ellipsis [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
+            <h3 className="w-full relative text-title-m font-medium font-euclid text-light-fg-primary [line-height:32px] [display:-webkit-inline-box] overflow-hidden text-ellipsis [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
               {title}
             </h3>
           </div>
@@ -116,7 +116,7 @@ export const AudioCardWeb = React.forwardRef<
           )}
           {/* Mobile: заголовок снизу, gap: 8px от badge */}
           <div className="flex md:hidden flex-col gap-8 w-full">
-            <h3 className="w-full relative text-body-xl font-medium font-euclid text-light-fg-primary [line-height:24px] [display:-webkit-inline-box] overflow-hidden text-ellipsis [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
+            <h3 className="w-full relative text-body-l-medium font-euclid text-light-fg-primary [line-height:24px] [display:-webkit-inline-box] overflow-hidden text-ellipsis [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
               {title}
             </h3>
           </div>
@@ -147,7 +147,7 @@ export const AudioCardWeb = React.forwardRef<
               </div>
               {duration && (
                 <div className="shrink-0 flex items-end py-4 px-8 box-border" style={{ width: "47px" }}>
-                  <div className="relative leading-4 font-medium text-body-s text-light-fg-secondary">
+                  <div className="relative leading-4 text-body-s-medium text-light-fg-secondary">
                     {duration}
                   </div>
                 </div>

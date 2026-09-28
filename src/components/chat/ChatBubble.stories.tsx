@@ -120,10 +120,10 @@ export const AllVariants: Story = {
     <div className="grid grid-cols-1 gap-24 lg:grid-cols-2">
       {(["message", "file", "image"] as const).map((type) => (
         <section key={type} className="rounded-m bg-light-bg-primary py-16 lg:col-span-2">
-          <h3 className="px-16 pb-8 font-euclid text-title-m text-light-fg-primary">Type = {type}</h3>
+          <h3 className="px-16 pb-8 font-euclid text-title-s text-light-fg-primary">Type = {type}</h3>
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="max-w-375">
-              <p className="px-16 font-euclid text-body-s text-light-fg-tertiary">Входящие</p>
+              <p className="px-16 font-euclid text-body-s-regular text-light-fg-tertiary">Входящие</p>
               <ChatBubble {...args} type={type} outgoing={false} status={undefined} />
               {type === "message" && <ChatBubble {...args} type={type} width="max" outgoing={false} status={undefined} />}
               {type === "image" && (
@@ -134,7 +134,7 @@ export const AllVariants: Story = {
               )}
             </div>
             <div className="max-w-375">
-              <p className="px-16 font-euclid text-body-s text-light-fg-tertiary">Исходящие</p>
+              <p className="px-16 font-euclid text-body-s-regular text-light-fg-tertiary">Исходящие</p>
               {outgoingStatuses.map((status) => (
                 <ChatBubble key={status} {...args} type={type} outgoing status={status} />
               ))}

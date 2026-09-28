@@ -66,7 +66,7 @@ export const Interactive: Story = {
           size={56}
           onToggle={(newState) => setState(newState)}
         />
-        <p className="text-body-m text-light-fg-secondary">
+        <p className="text-body-s-regular text-light-fg-secondary">
           Текущее состояние: {state}
         </p>
       </div>
@@ -78,7 +78,7 @@ export const AllVariants: Story = {
   render: () => (
     <div className="flex flex-col gap-24">
       <div className="flex flex-col gap-12">
-        <h3 className="text-title-m font-semibold">Play (24px, 32px, 56px, 72px)</h3>
+        <h3 className="text-title-s">Play (24px, 32px, 56px, 72px)</h3>
         <div className="flex items-center gap-16">
           <ButtonPlayPause state="play" size={24} />
           <ButtonPlayPause state="play" size={32} />
@@ -87,7 +87,7 @@ export const AllVariants: Story = {
         </div>
       </div>
       <div className="flex flex-col gap-12">
-        <h3 className="text-title-m font-semibold">Pause (24px, 32px, 56px, 72px)</h3>
+        <h3 className="text-title-s">Pause (24px, 32px, 56px, 72px)</h3>
         <div className="flex items-center gap-16">
           <ButtonPlayPause state="pause" size={24} />
           <ButtonPlayPause state="pause" size={32} />
@@ -103,21 +103,21 @@ export const WithBackground: Story = {
   render: () => (
     <div className="flex flex-col gap-24 p-24">
       <div className="flex flex-col gap-12">
-        <h3 className="text-title-m font-semibold">На светлом фоне</h3>
+        <h3 className="text-title-s">На светлом фоне</h3>
         <div className="flex items-center gap-16 p-24 bg-light-bg-secondary rounded-m">
           <ButtonPlayPause state="play" size={56} />
           <ButtonPlayPause state="pause" size={56} />
         </div>
       </div>
       <div className="flex flex-col gap-12">
-        <h3 className="text-title-m font-semibold">На темном фоне</h3>
+        <h3 className="text-title-s">На темном фоне</h3>
         <div className="flex items-center gap-16 p-24 bg-dark-bg-primary rounded-m">
           <ButtonPlayPause state="play" size={56} />
           <ButtonPlayPause state="pause" size={56} />
         </div>
       </div>
       <div className="flex flex-col gap-12">
-        <h3 className="text-title-m font-semibold">На изображении (для демонстрации blur эффекта)</h3>
+        <h3 className="text-title-s">На изображении (для демонстрации blur эффекта)</h3>
         <div
           className="flex items-center gap-16 p-24 rounded-m relative overflow-hidden"
           style={{

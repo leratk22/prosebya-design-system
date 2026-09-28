@@ -91,7 +91,7 @@ export const AllVariants: Story = {
   render: () => (
     <div className="flex flex-col gap-24">
       <div className="flex flex-col gap-12">
-        <h3 className="text-title-m font-semibold">Default (на светлом фоне)</h3>
+        <h3 className="text-title-s">Default (на светлом фоне)</h3>
         <div className="flex flex-wrap gap-8">
           <Badge variant="default">Без иконки</Badge>
           <Badge variant="default" iconName="check">
@@ -106,7 +106,7 @@ export const AllVariants: Story = {
         </div>
       </div>
       <div className="flex flex-col gap-12">
-        <h3 className="text-title-m font-semibold">Invert (на темном фоне)</h3>
+        <h3 className="text-title-s">Invert (на темном фоне)</h3>
         <div className="p-24 bg-dark-bg-primary rounded-m flex flex-wrap gap-8">
           <Badge variant="invert">Без иконки</Badge>
           <Badge variant="invert" iconName="check">
@@ -128,7 +128,7 @@ export const LongText: Story = {
   render: () => (
     <div className="flex flex-col gap-16">
       <div className="flex flex-col gap-12">
-        <h3 className="text-title-m font-semibold">Длинный текст обрезается многоточием</h3>
+        <h3 className="text-title-s">Длинный текст обрезается многоточием</h3>
         <div className="flex flex-col gap-8">
           <div className="w-200">
             <Badge variant="default">
@@ -148,7 +148,7 @@ export const LongText: Story = {
         </div>
       </div>
       <div className="flex flex-col gap-12">
-        <h3 className="text-title-m font-semibold">Invert вариант с длинным текстом</h3>
+        <h3 className="text-title-s">Invert вариант с длинным текстом</h3>
         <div className="p-24 bg-dark-bg-primary rounded-m flex flex-col gap-8">
           <div className="w-200">
             <Badge variant="invert">

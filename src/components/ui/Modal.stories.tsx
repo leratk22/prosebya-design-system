@@ -288,7 +288,7 @@ export const CustomContent: Story = {
       buttonLayout="horizontal"
     >
       <p className="mb-12">Ниже — произвольная разметка (список, форма и т.д.):</p>
-      <ul className="list-disc list-inside text-body-l space-y-4">
+      <ul className="list-disc list-inside text-body-m-regular space-y-4">
         <li>Пункт 1</li>
         <li>Пункт 2</li>
         <li>Пункт 3</li>

@@ -74,15 +74,15 @@ export const ContentRecommendationCard = React.forwardRef<
         {...rest}
       >
         {caption && (
-          <p className="text-caption-s font-medium uppercase tracking-caption-s text-light-fg-secondary dark:text-dark-fg-secondary">
+          <p className="text-caption-s uppercase text-light-fg-secondary dark:text-dark-fg-secondary">
             {withRussianQuotes(caption)}
           </p>
         )}
-        <h3 className="text-title-m font-semibold text-light-fg-primary dark:text-dark-fg-primary line-clamp-2">
+        <h3 className="text-title-s text-light-fg-primary dark:text-dark-fg-primary line-clamp-2">
           {withRussianQuotes(title)}
         </h3>
         {description && (
-          <p className="text-body-l font-regular text-light-fg-tertiary dark:text-dark-fg-tertiary line-clamp-2">
+          <p className="text-body-m-regular text-light-fg-tertiary dark:text-dark-fg-tertiary line-clamp-2">
             {withRussianQuotes(description)}
           </p>
         )}

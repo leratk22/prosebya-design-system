@@ -27,6 +27,15 @@
   font-display: swap;
 }
 
+/* Semibold Italic — для стилей Title/*-Decorative и Content/Body/L-Bold-Italic */
+@font-face {
+  font-family: 'Euclid Circular A';
+  src: url('/fonts/EuclidCircularA-SemiboldItalic-WebM.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
 @font-face {
   font-family: 'Euclid Circular A';
   src: url('/fonts/EuclidCircularA-Bold.otf') format('opentype');

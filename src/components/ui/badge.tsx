@@ -67,7 +67,7 @@ export const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
       "box-border", // как в Figma
       "rounded-full", // rounded-[100px] в Figma
       "text-left", // как в Figma
-      "text-body-s font-medium font-euclid leading-4", // text-body-s (12px), leading-4 (16px), letter-spacing: 0 (стандартный)
+      "text-body-s-medium font-euclid leading-4", // text-body-s (12px), leading-4 (16px), letter-spacing: 0 (стандартный)
       "max-w-full", // ограничение максимальной ширины
       "overflow-hidden", // необходимо для работы text-ellipsis
       ...variantClasses,

@@ -112,7 +112,7 @@ function SeeMoreCard({
         .join(" ")}
     >
       <div className="flex flex-col items-center gap-16 p-16">
-        <p className="font-medium font-euclid text-body-xl text-light-fg-primary dark:text-dark-fg-primary text-center">
+        <p className=" font-euclid text-body-l-medium text-light-fg-primary dark:text-dark-fg-primary text-center">
           {text}
         </p>
         <div className="bg-core-inverted rounded-full px-16 py-8 flex items-center justify-center">
@@ -164,11 +164,11 @@ function PracticeCard({
     >
       {/* Text content */}
       <div className="flex-1 flex flex-col justify-between self-stretch min-w-0 pl-16 py-16">
-        <p className="font-medium font-euclid text-body-xl text-light-fg-primary dark:text-dark-fg-primary line-clamp-3 break-words">
+        <p className=" font-euclid text-body-l-medium text-light-fg-primary dark:text-dark-fg-primary line-clamp-3 break-words">
           {item.title}
         </p>
         {item.subtitle && (
-          <p className="font-medium font-euclid text-body-s text-light-fg-tertiary dark:text-dark-fg-tertiary line-clamp-2 mt-4">
+          <p className=" font-euclid text-body-s-medium text-light-fg-tertiary dark:text-dark-fg-tertiary line-clamp-2 mt-4">
             {item.subtitle}
           </p>
         )}
@@ -246,7 +246,7 @@ export const SkillCourseCarousel = React.forwardRef<
       >
         {/* ── Header ── */}
         <div className="flex items-center justify-between h-[56px] md:h-auto -ml-16 md:ml-0">
-          <h2 className="font-semibold font-euclid text-title-xl text-light-fg-primary dark:text-dark-fg-primary flex-1 min-w-0">
+          <h2 className=" font-euclid text-title-l text-light-fg-primary dark:text-dark-fg-primary flex-1 min-w-0">
             {title}
           </h2>
 

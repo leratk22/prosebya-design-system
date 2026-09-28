@@ -80,7 +80,7 @@ export const ChatFile = React.forwardRef<HTMLDivElement, ChatFileProps>(
         >
           {icon}
         </button>
-        <div className="flex min-w-0 flex-1 flex-col gap-2 font-euclid text-body-xl">
+        <div className="flex min-w-0 flex-1 flex-col gap-2 font-euclid text-body-l-regular">
           <span className="truncate text-light-fg-primary">{name}</span>
           <span className="text-light-fg-secondary">{size}</span>
         </div>

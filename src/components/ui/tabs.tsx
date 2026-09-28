@@ -37,7 +37,7 @@ export const Tabs: React.FC<TabsProps> = ({
             onClick={() => onTabChange(item.id)}
             className={`
               relative pb-8
-              text-body-l font-regular
+              text-body-m-regular
               transition-colors
               ${isActive 
                 ? "text-brand-blue font-semibold" 
