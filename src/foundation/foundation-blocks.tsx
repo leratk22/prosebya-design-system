@@ -1,5 +1,5 @@
 import * as React from "react";
-import { lineHeightVar, sizeVar, textStyles, type TextStyleToken, type TypeMode } from "../tokens/typography";
+import { textStyles, type TextStyleToken } from "../tokens/typography";
 import { gapTokens, spacingRules, spacingScale } from "../tokens/spacing";
 import {
   breakpoints,
@@ -41,20 +41,9 @@ function Section({
   );
 }
 
-/**
- * Оформление страниц Foundation всегда в размерах для 375, на любой ширине холста:
- * классы text-* внутри берут значения из этих переменных.
- */
-const pinnedTypeVars = Object.fromEntries(
-  textStyles.flatMap((style) => [
-    [sizeVar(style.name), `${style.metrics["375"].size}px`],
-    [lineHeightVar(style.name), `${style.metrics["375"].lineHeight}px`],
-  ]),
-) as React.CSSProperties;
-
 function Page({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-col gap-40 p-24 font-euclid text-light-fg-primary" style={pinnedTypeVars}>
+    <div className="flex flex-col gap-40 p-24 font-euclid text-light-fg-primary">
       {children}
     </div>
   );
@@ -138,7 +127,6 @@ export function SemanticColors({ theme }: { theme: Theme }) {
     <div
       className="flex flex-col gap-40 p-24 font-euclid"
       style={{
-        ...pinnedTypeVars,
         background: semanticValue(theme, "bg-primary"),
         color: semanticValue(theme, "fg-primary"),
       }}
@@ -158,8 +146,6 @@ export function SemanticColors({ theme }: { theme: Theme }) {
 }
 
 /* ---------- Типографика ---------- */
-
-const MODE_LABEL: Record<TypeMode, string> = { "320": "320", "375": "360–429", "430": "430+" };
 
 function styleTraits(style: TextStyleToken) {
   const weight = fontWeights.find(([, value]) => Number(value) === style.weight)?.[0] ?? style.weight;
@@ -185,13 +171,13 @@ const GROUPS: Array<[string, string]> = [
   ["caption", "Caption"],
 ];
 
-/** Все текстовые стили Figma: пример, начертание и размеры на каждом брейкпоинте */
-export function TextStyles({ sample, mode }: { sample: string; mode: TypeMode }) {
+/** Все текстовые стили Figma: пример, начертание и размер */
+export function TextStyles({ sample }: { sample: string }) {
   return (
     <Page>
       <Section
         title="Текстовые стили"
-        description={`${fontFamily[0]}: Regular, Medium, Semibold и курсивы. Стиль задаёт всё сразу — размер, высоту строки, трекинг и начертание. Размер меняется по ширине экрана; примеры показаны для ${MODE_LABEL[mode]} px.`}
+        description={`${fontFamily[0]}: Regular, Medium, Semibold и курсивы. Стиль задаёт всё сразу — размер, высоту строки, трекинг и начертание.`}
       >
         {GROUPS.map(([prefix, label]) => {
           const group = textStyles.filter((style) => style.name.startsWith(prefix));
@@ -209,16 +195,12 @@ export function TextStyles({ sample, mode }: { sample: string; mode: TypeMode })
                     <span className="text-label-m font-medium">{`text-${style.name}`}</span>
                     <span className="text-body-s-regular text-light-fg-tertiary">{style.figma}</span>
                     <span className="text-body-s-regular text-light-fg-tertiary">{styleTraits(style)}</span>
-                    <span className="text-body-s-regular text-light-fg-tertiary">
-                      {(Object.keys(MODE_LABEL) as TypeMode[])
-                        .map((key) => `${MODE_LABEL[key]}: ${style.metrics[key].size}/${style.metrics[key].lineHeight}`)
-                        .join(" · ")}
-                    </span>
+                    <span className="text-body-s-regular text-light-fg-tertiary">{`${style.size} / ${style.lineHeight}`}</span>
                   </div>
                   <p
                     style={{
-                      fontSize: style.metrics[mode].size,
-                      lineHeight: `${style.metrics[mode].lineHeight}px`,
+                      fontSize: style.size,
+                      lineHeight: `${style.lineHeight}px`,
                       letterSpacing: `${style.letterSpacing}em`,
                       fontWeight: style.weight,
                       fontStyle: style.italic ? "italic" : undefined,

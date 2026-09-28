@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss'
-import { textStyles, TYPE_BREAKPOINTS, sizeVar, lineHeightVar } from './src/tokens/typography'
+import { textStyles } from './src/tokens/typography'
 
 const config: Config = {
   content: [
@@ -396,31 +396,15 @@ const config: Config = {
     },
   },
   plugins: [
-    // Текстовые стили Figma: размер и высота строки меняются по брейкпоинтам через CSS-переменные.
-    // Слой components, чтобы font-*, uppercase и т. п. в разметке могли переопределить стиль.
-    function({ addBase, addComponents }: any) {
-      const modes = Object.entries(TYPE_BREAKPOINTS) as Array<[keyof typeof TYPE_BREAKPOINTS, number]>
-      const varsFor = (mode: keyof typeof TYPE_BREAKPOINTS) =>
-        Object.fromEntries(
-          textStyles.flatMap((style) => [
-            [sizeVar(style.name), `${style.metrics[mode].size}px`],
-            [lineHeightVar(style.name), `${style.metrics[mode].lineHeight}px`],
-          ]),
-        )
-      addBase(
-        Object.fromEntries(
-          modes.map(([mode, minWidth]) =>
-            minWidth === 0 ? [':root', varsFor(mode)] : [`@media (min-width: ${minWidth}px)`, { ':root': varsFor(mode) }],
-          ),
-        ),
-      )
+    // Текстовые стили Figma. Слой components, чтобы font-*, uppercase и т. п. в разметке могли переопределить стиль.
+    function({ addComponents }: any) {
       addComponents(
         Object.fromEntries(
           textStyles.map((style) => [
             `.text-${style.name}`,
             {
-              fontSize: `var(${sizeVar(style.name)})`,
-              lineHeight: `var(${lineHeightVar(style.name)})`,
+              fontSize: `${style.size}px`,
+              lineHeight: `${style.lineHeight}px`,
               letterSpacing: style.letterSpacing ? `${style.letterSpacing}em` : '0',
               fontWeight: String(style.weight),
               ...(style.italic && { fontStyle: 'italic' }),
